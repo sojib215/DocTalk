@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="bn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Hind+Siliguri:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e0e3e3",
+                    "outline-variant": "#bdc8cb",
+                    "background": "#f7fafa",
+                    "tertiary-container": "#d12e2e",
+                    "inverse-on-surface": "#eef1f1",
+                    "primary": "#005f6c",
+                    "tertiary": "#ad0e19",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#ebeeee",
+                    "on-tertiary-fixed-variant": "#930010",
+                    "on-secondary-fixed-variant": "#00504a",
+                    "on-surface-variant": "#3e494b",
+                    "surface-bright": "#f7fafa",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#181c1d",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#006f67",
+                    "primary-fixed": "#a0efff",
+                    "on-primary-fixed-variant": "#004e59",
+                    "surface-container-low": "#f1f4f4",
+                    "tertiary-fixed": "#ffdad6",
+                    "on-secondary-fixed": "#00201d",
+                    "on-tertiary-container": "#ffefed",
+                    "on-surface": "#181c1d",
+                    "on-primary-fixed": "#001f25",
+                    "primary-container": "#007a8a",
+                    "inverse-primary": "#7ad4e5",
+                    "on-primary-container": "#daf8ff",
+                    "tertiary-fixed-dim": "#ffb3ac",
+                    "error": "#ba1a1a",
+                    "surface": "#f7fafa",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#7ad4e5",
+                    "surface-container-high": "#e6e9e9",
+                    "secondary-container": "#8bf1e6",
+                    "surface-container-highest": "#e0e3e3",
+                    "outline": "#6e797b",
+                    "secondary": "#006a63",
+                    "on-tertiary-fixed": "#410003",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#d7dbdb",
+                    "surface-tint": "#006876",
+                    "secondary-fixed-dim": "#71d7cd",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#8ef4e9",
+                    "inverse-surface": "#2d3131"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"],
+                    "bangla": ["Hind Siliguri"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', 'Hind Siliguri', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .bangla-text { font-family: 'Hind Siliguri', sans-serif; line-height: 1.6; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- NAVBAR -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <div class="text-xl font-bold text-teal-600">
+      DocTalk
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-6 items-center">
+      <a href="index.html" class="hover:text-teal-600">হোম</a>
+      <a href="doctor_search_profiles.html" class="hover:text-teal-600">ডাক্তার খুঁজুন</a>
+      <a href="patient_dashboard.html" class="hover:text-teal-600">ড্যাশবোর্ড</a>
+      <a href="medicine_store.html" class="hover:text-teal-600">মেডিসিন</a>
+      <a href="blood_donation_center.html" class="hover:text-teal-600">রক্তদান</a>
+      <a href="emergency_services_directory.html" class="hover:text-teal-600">জরুরি</a>
+      <a href="symptom_checker.html" class="hover:text-teal-600">সিম্পটম</a>
+      <a href="online_consultation_interface.html" class="hover:text-teal-600">কনসাল্ট</a>
+
+      <a href="#" class="px-4 py-1 bg-teal-600 text-white rounded-full">লগইন</a>
+      <a href="#" class="px-4 py-1 border border-teal-600 text-teal-600 rounded-full">নিবন্ধন</a>
+    </div>
+
+    <!-- Mobile Button -->
+    <div class="md:hidden">
+      <button onclick="toggleMenu()" class="text-2xl">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-3 bg-white">
+    <a href="index.html" class="block">হোম</a>
+    <a href="doctor_search_profiles.html" class="block">ডাক্তার খুঁজুন</a>
+    <a href="patient_dashboard.html" class="block">ড্যাশবোর্ড</a>
+    <a href="medicine_store.html" class="block">মেডিসিন</a>
+    <a href="blood_donation_center.html" class="block">রক্তদান</a>
+    <a href="emergency_services_directory.html" class="block">জরুরি</a>
+    <a href="symptom_checker.html" class="block">সিম্পটম</a>
+    <a href="online_consultation_interface.html" class="block">কনসাল্ট</a>
+
+    <a href="#" class="block bg-teal-600 text-white text-center py-2 rounded-full">লগইন</a>
+    <a href="#" class="block border border-teal-600 text-teal-600 text-center py-2 rounded-full">নিবন্ধন</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  }
+</script>
+
+<main class="pt-24 pb-32 px-4 max-w-3xl mx-auto">
+<!-- Progress Bar -->
+<div class="mb-10 px-2">
+<div class="flex justify-between items-center mb-3">
+<span class="bangla-text text-sm font-medium text-primary">ধাপ ২ / ৩: পেমেন্ট সম্পন্ন করুন</span>
+<span class="text-xs font-semibold text-outline tracking-wider">66%</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-2/3 rounded-full transition-all duration-500"></div>
+</div>
+</div>
+<!-- Appointment Summary Bento -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+<div class="p-6 rounded-xl bg-surface-container-lowest border-l-4 border-primary transition-all duration-200">
+<h2 class="bangla-text text-lg font-bold text-on-surface mb-4">অ্যাপয়েন্টমেন্ট সারসংক্ষেপ</h2>
+<div class="flex items-center gap-4 mb-4">
+<img class="w-14 h-14 rounded-full object-cover border-2 border-surface-container" data-alt="portrait of a professional south asian doctor in white lab coat with stethoscope friendly smile medical office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARyY0BhNaNfT7wOmK5G_XJRFxj8EDLA07evPk68HPhCTJPn-VGxDNJtdQU2syjZsb5napoaLfvN1uVpZ94F_dB9zwa2S59d_21fPuVxgi0KxiohOIyWQuq509XncboHaKO9q9YKs_4dSrnrgox2Jew8IgKK_8kbCaQIcyq6zId6vxXy2zfW42B439UJ_VATDeSZ2oL-d4cBc80jE0WG-5790N9oL1H2ne8liRaBI24LeyKNJMdYKZAs3ptuAbC5Na0yC4LUB68MY0x"/>
+<div>
+<p class="bangla-text font-semibold text-primary">ডাঃ তামান্না আহমেদ</p>
+<p class="bangla-text text-sm text-on-surface-variant">কার্ডিওলজি বিশেষজ্ঞ</p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span class="bangla-text text-sm">১০ অক্টোবর, ২০২৪</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-lg">schedule</span>
+<span class="bangla-text text-sm">বিকাল ০৪:৩০ - ০৫:০০</span>
+</div>
+</div>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low transition-all duration-200">
+<h2 class="bangla-text text-lg font-bold text-on-surface mb-4">ফি ব্রেকডাউন</h2>
+<div class="space-y-3">
+<div class="flex justify-between">
+<span class="bangla-text text-on-surface-variant">পরামর্শ ফি</span>
+<span class="font-semibold">৳৮০০</span>
+</div>
+<div class="flex justify-between">
+<span class="bangla-text text-on-surface-variant">ভ্যাট (৫%)</span>
+<span class="font-semibold">৳৪০</span>
+</div>
+<div class="flex justify-between pt-3 border-t border-outline-variant/20">
+<span class="bangla-text font-bold text-primary">মোট প্রদেয়</span>
+<span class="font-extrabold text-primary text-xl">৳৮৪০</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Payment Methods -->
+<section>
+<h3 class="bangla-text text-lg font-bold text-on-surface mb-5 px-2">পেমেন্ট পদ্ধতি নির্বাচন করুন</h3>
+<!-- Mobile Banking Options -->
+<div class="grid grid-cols-3 gap-4 mb-6">
+<div class="group relative p-4 rounded-xl bg-surface-container-lowest border-2 border-primary ring-2 ring-primary-fixed cursor-pointer transition-all">
+<div class="absolute top-2 right-2">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<img class="h-8 object-contain" data-alt="abstract pink and white logo representation on smooth flat background representing a modern mobile payment service" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhy0x3Qt5Y9JEfm8Kn1jDYRFmjlEB_LdPyIXcqFBrqPqCs7Nci2t6ImXmUp8AfdONbo1XqRVIZIvGkJuhD37i6N-6dzYgfbd5hc4QOkgXApY9vKFjcYAUGKZO51yACdlVfceHyEoqudcrrZM-VDrHnugWv5bsS5LrnqVpmF9cbr0tfFVvPmYfZ6wAG9MO-TB5fBEVRNVLB1depQvwPPTNmnS2MBixCItJStp-9rFJv92lIUz4p8ge2sHZGZr1zmd-XpU_jaZYnLt7U"/>
+<span class="bangla-text text-xs font-semibold">বিকাশ</span>
+</div>
+</div>
+<div class="group p-4 rounded-xl bg-surface-container-lowest border-2 border-transparent hover:border-surface-container-high cursor-pointer transition-all">
+<div class="flex flex-col items-center gap-2">
+<img class="h-8 object-contain" data-alt="stylized orange and white payment icon representing nagad mobile banking service soft focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp_996NRkgpbrGdgru0ic8G944yCOjXLBdkMIDsM5jZ9Ssefkou6hWiA0HdXLB0u3x6bqEmllA81nR0mdERo-2BPOsh4YySUkV9JeszHnUu0cjGWmIAWw2bgQpwls8JbMXWs0Lr7GceBSyFb81CPzgfW-1cncK5nwhM5HoLOoV1qoqscTkGyx2ltftvXha4EWhEebIRQbgkzebxT4M4EgPbto3L3Tkm7YH4H9j7Am1nlhVdumNdmVwoLG252nBxTl3HFyOCoB5h_Q5"/>
+<span class="bangla-text text-xs font-semibold">নগদ</span>
+</div>
+</div>
+<div class="group p-4 rounded-xl bg-surface-container-lowest border-2 border-transparent hover:border-surface-container-high cursor-pointer transition-all">
+<div class="flex flex-col items-center gap-2">
+<img class="h-8 object-contain" data-alt="abstract purple and gold financial service icon representing rocket mobile wallet service" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFndTe8As2GNNFiVfkgPWewueLr9QzRf60MUmAWX5yJpcFFV3r6KQbk5H-DKIy6k2I5dFaaO_URF6u0qH7SlxzSif4_-frftZXAvobMndIrT3b2dqzIA9P5pjOEHC4fY5kEykXCQDfi4BJpNuxq78WdgFrtEF5EEpmoYXBgsscm_ZmN3o3G2M41oKuUY-FvYx_ACeQ0vRVZFPhG_utqj2EUTSPQI7Hv5UtYszm7YUe82js1ky_1usk72rmR9-M8KuXfBGYltjsy1ez"/>
+<span class="bangla-text text-xs font-semibold">রকেট</span>
+</div>
+</div>
+</div>
+<!-- Card Payment Section -->
+<div class="bg-surface-container-lowest rounded-xl p-6 mb-8">
+<div class="flex justify-between items-center mb-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+<span class="bangla-text font-bold">কার্ড দিয়ে পেমেন্ট</span>
+</div>
+<div class="flex gap-2 opacity-60">
+<img class="h-4" data-alt="visa mastercard logos small set together" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcP5GQCEqhDKFyxpgU-eTYYXCa3UT1y7LkEXtB7T1kG4rxXHCpwffYdLG0pb8WB8JzClN7KGjN6tFIqNxfG1CN8GdrI-z8EWbEiOLEn4Rn1scdmxUHfmKNDamGZl4ecg4Oessggg1sRr0gftB8E1GZ3B8zwgkv-6uq3Q_XNmG9UlEGqj7OnL8HtklT7zv1TwINREedOupDgcR7Xu32pnYWGLcuZdrroAwme55soBMwDv-UEAJUf6y-rn4JSLumcfgj1RCTbWmGsHmM"/>
+</div>
+</div>
+<div class="space-y-4">
+<div class="relative">
+<label class="bangla-text absolute -top-2.5 left-3 px-1 bg-surface-container-lowest text-xs text-outline font-medium tracking-wide">কার্ড নম্বর</label>
+<input class="w-full p-4 pt-5 border-none bg-surface-container-low rounded-lg focus:ring-2 focus:ring-primary-fixed text-sm font-mono" placeholder="#### #### #### ####" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="relative">
+<label class="bangla-text absolute -top-2.5 left-3 px-1 bg-surface-container-lowest text-xs text-outline font-medium">মেয়াদ উত্তীর্ণ (MM/YY)</label>
+<input class="w-full p-4 pt-5 border-none bg-surface-container-low rounded-lg focus:ring-2 focus:ring-primary-fixed text-sm font-mono" placeholder="MM/YY" type="text"/>
+</div>
+<div class="relative">
+<label class="bangla-text absolute -top-2.5 left-3 px-1 bg-surface-container-lowest text-xs text-outline font-medium">সিভিভি (CVV)</label>
+<input class="w-full p-4 pt-5 border-none bg-surface-container-low rounded-lg focus:ring-2 focus:ring-primary-fixed text-sm font-mono" placeholder="***" type="password"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Badge -->
+<div class="flex items-center justify-center gap-2 text-outline-variant mb-10">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="bangla-text text-xs">আপনার পেমেন্ট তথ্য এনক্রিপ্ট করা এবং নিরাপদ</span>
+</div>
+</section>
+<!-- Final Action -->
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-white rounded-full font-bold bangla-text text-lg shadow-lg active:scale-[0.98] transition-transform flex items-center justify-center gap-2">
+            পেমেন্ট নিশ্চিত করুন
+            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</main>
+<!-- Bottom Navigation Bar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl z-50 rounded-t-3xl border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)]">
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-5 py-2 hover:bg-slate-50 transition-all active:scale-90">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[11px] font-['Hind_Siliguri'] leading-tight">হোম</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-teal-50 dark:bg-teal-900/30 text-teal-800 dark:text-teal-200 rounded-2xl px-5 py-2 transition-all active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="text-[11px] font-['Hind_Siliguri'] leading-tight">অ্যাপয়েন্টমেন্ট</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-5 py-2 hover:bg-slate-50 transition-all active:scale-90">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="text-[11px] font-['Hind_Siliguri'] leading-tight">মেসেজ</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 px-5 py-2 hover:bg-slate-50 transition-all active:scale-90">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[11px] font-['Hind_Siliguri'] leading-tight">প্রোফাইল</span>
+</div>
+</nav>
+</body></html>

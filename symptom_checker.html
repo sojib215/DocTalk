@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="light" lang="bn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DocTalk - সিম্পটম চেকার</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Hind+Siliguri:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#00201d",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "surface": "#f7fafa",
+                        "inverse-primary": "#7ad4e5",
+                        "outline-variant": "#bdc8cb",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#daf8ff",
+                        "surface-variant": "#e0e3e3",
+                        "primary-fixed": "#a0efff",
+                        "on-surface": "#181c1d",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d7dbdb",
+                        "secondary-fixed": "#8ef4e9",
+                        "tertiary": "#ad0e19",
+                        "on-surface-variant": "#3e494b",
+                        "on-tertiary-container": "#ffefed",
+                        "primary-fixed-dim": "#7ad4e5",
+                        "background": "#f7fafa",
+                        "secondary-fixed-dim": "#71d7cd",
+                        "surface-tint": "#006876",
+                        "primary": "#005f6c",
+                        "surface-container": "#ebeeee",
+                        "inverse-on-surface": "#eef1f1",
+                        "secondary-container": "#8bf1e6",
+                        "on-primary-fixed": "#001f25",
+                        "primary-container": "#007a8a",
+                        "surface-container-highest": "#e0e3e3",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e6e9e9",
+                        "tertiary-fixed-dim": "#ffb3ac",
+                        "on-secondary-container": "#006f67",
+                        "secondary": "#006a63",
+                        "tertiary-container": "#d12e2e",
+                        "on-tertiary-fixed": "#410003",
+                        "surface-container-low": "#f1f4f4",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f7fafa",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#004e59",
+                        "on-background": "#181c1d",
+                        "tertiary-fixed": "#ffdad6",
+                        "on-secondary-fixed-variant": "#00504a",
+                        "outline": "#6e797b",
+                        "on-tertiary-fixed-variant": "#930010",
+                        "inverse-surface": "#2d3131"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "Hind Siliguri"],
+                        "body": ["Inter", "Hind Siliguri"],
+                        "label": ["Inter", "Hind Siliguri"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', 'Hind Siliguri', sans-serif; line-height: 1.6; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-panel { background: rgba(247, 250, 250, 0.8); backdrop-filter: blur(12px); }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #bdc8cb; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- NAVBAR -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <div class="text-xl font-bold text-teal-600">
+      DocTalk
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-6 items-center">
+      <a href="index.html" class="hover:text-teal-600">হোম</a>
+      <a href="doctor_search_profiles.html" class="hover:text-teal-600">ডাক্তার খুঁজুন</a>
+      <a href="patient_dashboard.html" class="hover:text-teal-600">ড্যাশবোর্ড</a>
+      <a href="medicine_store.html" class="hover:text-teal-600">মেডিসিন</a>
+      <a href="blood_donation_center.html" class="hover:text-teal-600">রক্তদান</a>
+      <a href="emergency_services_directory.html" class="hover:text-teal-600">জরুরি</a>
+      <a href="symptom_checker.html" class="hover:text-teal-600">সিম্পটম</a>
+      <a href="online_consultation_interface.html" class="hover:text-teal-600">কনসাল্ট</a>
+
+      <a href="#" class="px-4 py-1 bg-teal-600 text-white rounded-full">লগইন</a>
+      <a href="#" class="px-4 py-1 border border-teal-600 text-teal-600 rounded-full">নিবন্ধন</a>
+    </div>
+
+    <!-- Mobile Button -->
+    <div class="md:hidden">
+      <button onclick="toggleMenu()" class="text-2xl">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-3 bg-white">
+    <a href="index.html" class="block">হোম</a>
+    <a href="doctor_search_profiles.html" class="block">ডাক্তার খুঁজুন</a>
+    <a href="patient_dashboard.html" class="block">ড্যাশবোর্ড</a>
+    <a href="medicine_store.html" class="block">মেডিসিন</a>
+    <a href="blood_donation_center.html" class="block">রক্তদান</a>
+    <a href="emergency_services_directory.html" class="block">জরুরি</a>
+    <a href="symptom_checker.html" class="block">সিম্পটম</a>
+    <a href="online_consultation_interface.html" class="block">কনসাল্ট</a>
+
+    <a href="#" class="block bg-teal-600 text-white text-center py-2 rounded-full">লগইন</a>
+    <a href="#" class="block border border-teal-600 text-teal-600 text-center py-2 rounded-full">নিবন্ধন</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  }
+</script>
+
+<main class="max-w-screen-xl mx-auto px-6 py-12 min-h-screen flex flex-col gap-8">
+<!-- Symptom Checker Shell -->
+<section class="flex flex-col md:flex-row gap-8 items-start">
+<!-- Left Panel: Interactive Body & Selection -->
+<div class="w-full md:w-5/12 bg-surface-container-low rounded-2xl p-8 sticky top-24">
+<div class="mb-8">
+<h2 class="text-2xl font-bold text-primary mb-2">উপসর্গ নির্বাচন করুন</h2>
+<p class="text-on-surface-variant text-sm">শরীরের কোন অংশে আপনি অস্বস্তি অনুভব করছেন?</p>
+</div>
+<div class="relative bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/10 shadow-sm flex justify-center items-center">
+<!-- Anatomical Figure Placeholder -->
+<div class="relative w-64 h-96">
+<img class="w-full h-full object-contain opacity-40 mix-blend-multiply" data-alt="abstract minimalist anatomical human figure silhouette with soft medical glowing nodes on a clean studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyauN3ljN_pEuJHzQRnnqGzqing-kVMS8vBi6DNnf6camwvOeTZR9nMQJRiiUXowf2tuIUIe0tDcL_GT6ptnoD1Xd-Bx6mWPVybxWh_TY5OcQp6fVbAft0f7rRneDOTNs1rU46OVvBywtCcZ7PYlUwTlesJhJwB8AlaPqnQ7SUEpOBBFu44RpLExFTN2YGhnSJdlfRRxRNNXB7yqAea2p9syGZR7wt_gOoW7uUurcqTOkf_wCmKmwWTgdoIfT3WUfSQ9VNmWTVWbGg"/>
+<!-- Interactive Hotspots -->
+<button class="absolute top-[10%] left-1/2 -translate-x-1/2 w-4 h-4 bg-primary/20 rounded-full flex items-center justify-center hover:scale-125 transition-transform group">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+<span class="absolute left-6 bg-surface text-primary text-xs px-2 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">মাথা</span>
+</button>
+<button class="absolute top-[30%] left-1/2 -translate-x-1/2 w-4 h-4 bg-tertiary/20 rounded-full flex items-center justify-center hover:scale-125 transition-transform group">
+<div class="w-2 h-2 bg-tertiary rounded-full animate-pulse"></div>
+<span class="absolute left-6 bg-surface text-tertiary text-xs px-2 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">বুক</span>
+</button>
+<button class="absolute top-[50%] left-1/2 -translate-x-1/2 w-4 h-4 bg-primary/20 rounded-full flex items-center justify-center hover:scale-125 transition-transform group">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+<span class="absolute left-6 bg-surface text-primary text-xs px-2 py-1 rounded shadow-md opacity-0 group-hover:opacity-100 transition-opacity">পেট</span>
+</button>
+</div>
+</div>
+<div class="mt-8">
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border-none rounded-xl py-4 pl-12 text-sm focus:ring-2 focus:ring-primary-fixed shadow-sm" placeholder="উপসর্গ খুঁজুন (যেমন: জ্বর, মাথাব্যথা...)" type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+</div>
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">বুক ব্যথা <span class="material-symbols-outlined text-sm">close</span></span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-xs font-medium">কাশী</span>
+<span class="bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full text-xs font-medium">শ্বাসকষ্ট</span>
+</div>
+</div>
+</div>
+<!-- Right Panel: Conversational Diagnostic Flow -->
+<div class="w-full md:w-7/12 flex flex-col gap-6">
+<!-- Progress Indicator -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm">
+<div class="flex justify-between items-center mb-4">
+<span class="text-xs font-bold text-primary tracking-wider uppercase">অ্যানালাইসিস প্রগ্রেস</span>
+<span class="text-xs font-medium text-on-surface-variant">ধাপ ৪/৭</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-[57%] transition-all duration-500"></div>
+</div>
+</div>
+<!-- Chat Interface -->
+<div class="bg-white/40 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-xl min-h-[600px] flex flex-col">
+<div class="flex-grow flex flex-col gap-8 custom-scrollbar overflow-y-auto pr-4">
+<!-- AI Message -->
+<div class="flex gap-4 items-start max-w-[85%]">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center flex-shrink-0 text-white">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-2xl rounded-tl-none shadow-sm">
+<p class="text-on-surface text-base">আপনার বুক ব্যথার ধরণ কেমন? এটি কি হঠাৎ শুরু হয়েছে নাকি দীর্ঘক্ষণ ধরে চলছে?</p>
+<span class="text-[10px] text-on-surface-variant mt-2 block opacity-60">১০:২৪ AM</span>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex gap-4 items-start self-end flex-row-reverse max-w-[85%]">
+<div class="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center flex-shrink-0 text-white shadow-md shadow-secondary/20">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div class="bg-primary text-on-primary p-4 rounded-2xl rounded-tr-none shadow-md">
+<p class="text-base">হঠাৎ করে শুরু হয়েছে এবং বিশ্রামেও কমছে না।</p>
+<span class="text-[10px] text-on-primary/70 mt-2 block">১০:২৫ AM</span>
+</div>
+</div>
+<!-- AI Question Block -->
+<div class="flex gap-4 items-start max-w-[85%]">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center flex-shrink-0 text-white">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<div class="flex flex-col gap-4">
+<div class="bg-surface-container-low p-4 rounded-2xl rounded-tl-none shadow-sm">
+<p class="text-on-surface text-base">আপনার কি ঘাম হচ্ছে অথবা বমি বমি ভাব অনুভব করছেন?</p>
+</div>
+<!-- Interactive Options -->
+<div class="grid grid-cols-1 gap-3 w-full">
+<button class="flex items-center justify-between p-4 bg-surface-container-lowest border-2 border-primary-container/20 rounded-xl hover:border-primary transition-all text-left group">
+<span class="font-semibold text-primary">হ্যাঁ, হচ্ছে</span>
+<span class="material-symbols-outlined text-primary-container opacity-0 group-hover:opacity-100 transition-opacity">check_circle</span>
+</button>
+<button class="flex items-center justify-between p-4 bg-surface-container-lowest border-2 border-outline-variant/10 rounded-xl hover:border-primary/40 transition-all text-left">
+<span class="font-medium text-on-surface-variant">না, হচ্ছে না</span>
+</button>
+<button class="flex items-center justify-between p-4 bg-surface-container-lowest border-2 border-outline-variant/10 rounded-xl hover:border-primary/40 transition-all text-left">
+<span class="font-medium text-on-surface-variant">খুব সামান্য</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Input Area -->
+<div class="mt-8 pt-6 border-t border-outline-variant/10 flex gap-4">
+<button class="w-12 h-12 rounded-full flex items-center justify-center bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<div class="flex-grow relative">
+<input class="w-full h-12 bg-surface-container border-none rounded-full px-6 focus:ring-2 focus:ring-primary-fixed" placeholder="আপনার উত্তর এখানে লিখুন..." type="text"/>
+</div>
+<button class="w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-tr from-primary to-primary-container text-white shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Final Diagnostic Result Section (Implicitly shown as scrolling down) -->
+<section class="bg-surface-container-low rounded-3xl p-10 mt-12 overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+<div class="flex flex-col md:flex-row gap-12 relative z-10">
+<div class="flex-grow space-y-8">
+<div>
+<div class="flex items-center gap-3 text-tertiary font-bold mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span>সম্ভাব্য ফলাফল</span>
+</div>
+<h2 class="text-4xl font-black text-on-surface leading-tight">অ্যাঞ্জাইনা বা কার্ডিয়াক সমস্যা</h2>
+<p class="text-on-surface-variant mt-4 text-lg max-w-2xl">আপনার দেওয়া তথ্যানুসারে এটি হার্টের রক্তনালীতে বাধার একটি লক্ষণ হতে পারে। তবে এটি নিশ্চিত ডায়াগনোসিস নয়।</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm">
+<h4 class="font-bold text-primary mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">emergency_share</span> জরুরি পরামর্শ
+                            </h4>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5"></div> ভারী কাজ থেকে বিরত থাকুন</li>
+<li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5"></div> দ্রুত শ্বাস নেয়ার চেষ্টা করুন</li>
+</ul>
+</div>
+<div class="bg-tertiary-container/10 p-6 rounded-2xl border border-tertiary-container/20">
+<h4 class="font-bold text-tertiary mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">local_hospital</span> বিশেষ সতর্কবার্তা
+                            </h4>
+<p class="text-sm text-on-tertiary-container font-medium">যদি ব্যথা বাম বাহু বা চোয়ালে ছড়িয়ে যায়, তবে সাথে সাথে নিকটস্থ হাসপাতালের ইমার্জেন্সিতে যান।</p>
+</div>
+</div>
+</div>
+<div class="w-full md:w-80 flex-shrink-0">
+<div class="bg-primary p-8 rounded-2xl text-on-primary flex flex-col items-center text-center shadow-2xl shadow-primary/30">
+<div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-6 backdrop-blur-md">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">stethoscope</span>
+</div>
+<h3 class="text-xl font-bold mb-2">প্রয়োজনীয় বিশেষজ্ঞ</h3>
+<p class="text-on-primary/80 text-sm mb-6">আপনার এখন একজন অভিজ্ঞ হৃদরোগ বিশেষজ্ঞ (Cardiologist) দেখানো জরুরি।</p>
+<button class="w-full bg-white text-primary font-bold py-3 rounded-xl hover:bg-primary-fixed transition-colors">অ্যাপয়েন্টমেন্ট নিন</button>
+</div>
+<div class="mt-6 flex items-center justify-between p-4 bg-surface-container-highest rounded-xl cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">download</span>
+<span class="text-sm font-semibold">রিপোর্ট ডাউনলোড করুন</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-slate-100 dark:bg-slate-950 text-teal-800 dark:text-teal-300 font-['Inter','Hind_Siliguri'] text-sm leading-[1.6] w-full mt-auto pt-12 pb-8 border-t border-slate-200 dark:border-slate-800 flat shadow-none">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<span class="text-xl font-bold text-teal-800 mb-4 block">DocTalk</span>
+<p class="text-slate-500 dark:text-slate-400">বাংলাদেশের সবচেয়ে নির্ভরযোগ্য ডিজিটাল স্বাস্থ্যসেবা প্ল্যাটফর্ম। আমরা আছি আপনার পাশে, সবসময়।</p>
+</div>
+<div>
+<h4 class="font-bold text-teal-700 mb-4">দ্রুত লিংক</h4>
+<ul class="space-y-2">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 underline transition-all opacity-80 hover:opacity-100" href="#">জরুরি যোগাযোগ</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 underline transition-all opacity-80 hover:opacity-100" href="#">মেডিকেল ডিসক্লেইমার</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-teal-700 mb-4">আইনি তথ্য</h4>
+<ul class="space-y-2">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 underline transition-all opacity-80 hover:opacity-100" href="#">প্রাইভেসি পলিসি</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 underline transition-all opacity-80 hover:opacity-100" href="#">টার্মস অফ সার্ভিস</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-teal-700 mb-4">যোগাযোগ</h4>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary-container/20 transition-all">
+<img alt="Facebook" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtWfYz2qjYJhxyngsF6IURmHwzS-xj1cBEHLB9kxinqrMAIqFnyOps_C5yTaeK7ZVAzPmLdI0z5P4efGOmiRFmhg5Nx_3O9zeKob7O86QChUAWAH7pKbNy6V9ZDiP_yQahZ1peqfxE3QCWWf0Xmt8ONz76dQkVN2uBGKUeVOXgvEcpoyOFHbkbRtdrvPeofMmIX9oiGK_T2t_SOCsJ6LKWu9bIReMdJDii5lPjklFWGhq1L33kigKh1pf5OPW_KiXrbiCUnSJ605Go"/>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary-container/20 transition-all">
+<img alt="Twitter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSdBC1w4rakvCDowX9AxnYO9uhiZA1D_kiD4T5JUAnjF-43VlzLFkdyZ-KOEcLBo3SsC356SK0Z2m0YwXTRSXFY3zNwfZkRtlm2DCKHSmcnL_M6uSDBm_TG3ZzWNXfavRjPPg8t8G_Zh5w09oy6mynJhaUolJwRM0dq-mRTyiZBZEl7oSwyu_wKxDHBrK3i4TrrM8A3sQOnYP12pWdsB_IGzOxMdb9yM_QxbF47bVXrLq8OZ6RJnlUFB1FiA-RW7-6Z2Gf4qid768q"/>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-12 pt-8 border-t border-slate-200/50 text-center">
+<p class="text-slate-500 dark:text-slate-400 text-xs">© ২০২৪ DocTalk. সকল স্বত্ব সংরক্ষিত।</p>
+</div>
+</footer>
+</body></html>

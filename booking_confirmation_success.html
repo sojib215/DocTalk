@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="light" lang="bn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Hind+Siliguri:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e0e3e3",
+                    "outline-variant": "#bdc8cb",
+                    "background": "#f7fafa",
+                    "tertiary-container": "#d12e2e",
+                    "inverse-on-surface": "#eef1f1",
+                    "primary": "#005f6c",
+                    "tertiary": "#ad0e19",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#ebeeee",
+                    "on-tertiary-fixed-variant": "#930010",
+                    "on-secondary-fixed-variant": "#00504a",
+                    "on-surface-variant": "#3e494b",
+                    "surface-bright": "#f7fafa",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#181c1d",
+                    "error-container": "#ffdad6",
+                    "on-secondary-container": "#006f67",
+                    "primary-fixed": "#a0efff",
+                    "on-primary-fixed-variant": "#004e59",
+                    "surface-container-low": "#f1f4f4",
+                    "tertiary-fixed": "#ffdad6",
+                    "on-secondary-fixed": "#00201d",
+                    "on-tertiary-container": "#ffefed",
+                    "on-surface": "#181c1d",
+                    "on-primary-fixed": "#001f25",
+                    "primary-container": "#007a8a",
+                    "inverse-primary": "#7ad4e5",
+                    "on-primary-container": "#daf8ff",
+                    "tertiary-fixed-dim": "#ffb3ac",
+                    "error": "#ba1a1a",
+                    "surface": "#f7fafa",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#7ad4e5",
+                    "surface-container-high": "#e6e9e9",
+                    "secondary-container": "#8bf1e6",
+                    "surface-container-highest": "#e0e3e3",
+                    "outline": "#6e797b",
+                    "secondary": "#006a63",
+                    "on-tertiary-fixed": "#410003",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#d7dbdb",
+                    "surface-tint": "#006876",
+                    "secondary-fixed-dim": "#71d7cd",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#8ef4e9",
+                    "inverse-surface": "#2d3131"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"],
+                    "bangla": ["Hind Siliguri"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bangla-text { font-family: 'Hind Siliguri', sans-serif; line-height: 1.6; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+<!-- NAVBAR -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <div class="text-xl font-bold text-teal-600">
+      DocTalk
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-6 items-center">
+      <a href="index.html" class="hover:text-teal-600">হোম</a>
+      <a href="doctor_search_profiles.html" class="hover:text-teal-600">ডাক্তার খুঁজুন</a>
+      <a href="patient_dashboard.html" class="hover:text-teal-600">ড্যাশবোর্ড</a>
+      <a href="medicine_store.html" class="hover:text-teal-600">মেডিসিন</a>
+      <a href="blood_donation_center.html" class="hover:text-teal-600">রক্তদান</a>
+      <a href="emergency_services_directory.html" class="hover:text-teal-600">জরুরি</a>
+      <a href="symptom_checker.html" class="hover:text-teal-600">সিম্পটম</a>
+      <a href="online_consultation_interface.html" class="hover:text-teal-600">কনসাল্ট</a>
+
+      <a href="#" class="px-4 py-1 bg-teal-600 text-white rounded-full">লগইন</a>
+      <a href="#" class="px-4 py-1 border border-teal-600 text-teal-600 rounded-full">নিবন্ধন</a>
+    </div>
+
+    <!-- Mobile Button -->
+    <div class="md:hidden">
+      <button onclick="toggleMenu()" class="text-2xl">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-3 bg-white">
+    <a href="index.html" class="block">হোম</a>
+    <a href="doctor_search_profiles.html" class="block">ডাক্তার খুঁজুন</a>
+    <a href="patient_dashboard.html" class="block">ড্যাশবোর্ড</a>
+    <a href="medicine_store.html" class="block">মেডিসিন</a>
+    <a href="blood_donation_center.html" class="block">রক্তদান</a>
+    <a href="emergency_services_directory.html" class="block">জরুরি</a>
+    <a href="symptom_checker.html" class="block">সিম্পটম</a>
+    <a href="online_consultation_interface.html" class="block">কনসাল্ট</a>
+
+    <a href="#" class="block bg-teal-600 text-white text-center py-2 rounded-full">লগইন</a>
+    <a href="#" class="block border border-teal-600 text-teal-600 text-center py-2 rounded-full">নিবন্ধন</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  }
+</script>
+
+</header>
+<main class="pt-24 pb-12 px-4 md:px-8 max-w-4xl mx-auto">
+<!-- Progress Stepper -->
+<div class="mb-12">
+<div class="flex justify-between items-center mb-4">
+<span class="bangla-text text-sm font-semibold text-primary">ধাপ ৩ এর ৩ - সম্পন্ন</span>
+<span class="text-xs font-label text-outline uppercase tracking-wider">Step 3 of 3</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container w-full"></div>
+</div>
+</div>
+<!-- Success Hero Section -->
+<div class="text-center mb-12">
+<div class="inline-flex items-center justify-center w-24 h-24 rounded-full bg-secondary-container mb-6 relative">
+<div class="absolute inset-0 bg-secondary-container animate-ping opacity-20 rounded-full"></div>
+<span class="material-symbols-outlined text-on-secondary-container text-5xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h1 class="bangla-text text-3xl md:text-4xl font-bold text-on-surface mb-3">অ্যাপয়েন্টমেন্ট নিশ্চিত করা হয়েছে!</h1>
+<p class="bangla-text text-on-surface-variant text-lg">আপনার পরামর্শের বিবরণ নিচে দেওয়া হলো। আমরা আপনাকে এসএমএস এবং ইমেলের মাধ্যমেও নিশ্চিত করেছি।</p>
+</div>
+<!-- Confirmation Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Main Booking Details Card -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-8 transition-all hover:bg-surface-bright">
+<div class="flex justify-between items-start mb-8">
+<div>
+<p class="text-xs font-label text-outline mb-1 uppercase tracking-widest">Booking ID</p>
+<p class="font-headline font-bold text-primary text-xl">#DT-8829-X01</p>
+</div>
+<div class="px-4 py-1.5 bg-secondary-container/30 rounded-full">
+<span class="bangla-text text-sm font-semibold text-on-secondary-container">পেইড (Paid)</span>
+</div>
+</div>
+<div class="space-y-8">
+<div class="flex items-center gap-5">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+<img alt="Doctor Portrait" class="w-full h-full object-cover" data-alt="Professional portrait of a friendly South Asian male doctor wearing a white lab coat and stethoscope with a warm smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBjok5sfBNOE3MwZ3_8LpX5_1-Cn2x38_TpdgCQuC4Zo0WuDCtscfeETQlch2VZycORMivYnqtVsaMKLW1ddDKJfKRybVRfUFOAIkmhM0EuDYkCcP33Jo5anR6YQkDQ_eS_lV3eT0h7JvccvKu4UenU_7i_bBxoWmsF8xvKS2Z1W_IaePUOjwh7igWib8EbCjuZ5yJi4MSY_Q7NX7fWN5k8ha1G4VZ5_1pzP5rhoht6np_u7COu7GaF9vUFGmtaYRj_fHU3U-xYdpU"/>
+</div>
+<div>
+<h3 class="bangla-text text-xl font-bold text-on-surface">ডাঃ সায়মন আহমেদ</h3>
+<p class="bangla-text text-on-surface-variant">সিনিয়র কনসালটেন্ট, কার্ডিওলজি</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6 py-6 border-y border-outline-variant/10">
+<div>
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-xl">calendar_today</span>
+<span class="bangla-text font-semibold text-sm">তারিখ</span>
+</div>
+<p class="bangla-text text-on-surface font-medium">১৫ নভেম্বর, ২০২৪</p>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-xl">schedule</span>
+<span class="bangla-text font-semibold text-sm">সময়</span>
+</div>
+<p class="bangla-text text-on-surface font-medium">বিকাল ৪:৩০ - ৫:০০</p>
+</div>
+</div>
+<div>
+<p class="bangla-text text-sm font-semibold text-on-surface-variant mb-4">অনলাইন ভিডিও কনসালটেশন লিঙ্ক</p>
+<div class="flex flex-col sm:flex-row items-center gap-3">
+<div class="w-full flex-grow bg-surface-container-low px-4 py-3 rounded-lg border border-outline-variant/15 font-mono text-sm text-primary overflow-hidden text-ellipsis">
+                                meet.doctalk.com.bd/u/sym-8829-x
+                            </div>
+<button class="w-full sm:w-auto bangla-text px-6 py-3 bg-primary text-white rounded-full font-semibold hover:bg-primary-container transition-all active:scale-95 shadow-md">
+                                জয়েন করুন
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Column -->
+<div class="md:col-span-4 flex flex-col gap-6">
+<!-- Add to Calendar Card -->
+<div class="bg-surface-container-low p-6 rounded-xl text-center">
+<span class="material-symbols-outlined text-primary text-3xl mb-3">event_available</span>
+<h4 class="bangla-text font-bold mb-2">ক্যালেন্ডারে যোগ করুন</h4>
+<p class="bangla-text text-sm text-on-surface-variant mb-4">আপনার গুগল বা আউটলুক ক্যালেন্ডারে রিমাইন্ডার সেট করুন</p>
+<button class="w-full py-2.5 bg-surface-container-lowest text-primary bangla-text font-semibold rounded-lg hover:bg-white transition-colors">
+                        ক্যালেন্ডার সেভ করুন
+                    </button>
+</div>
+<!-- Guidance Card -->
+<div class="bg-primary/5 p-6 rounded-xl border border-primary/10">
+<h4 class="bangla-text font-bold text-primary mb-3">প্রস্তুতি নিন</h4>
+<ul class="space-y-3">
+<li class="flex gap-3 text-sm bangla-text text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg">check_small</span>
+                            আপনার পুরনো রিপোর্ট সাথে রাখুন
+                        </li>
+<li class="flex gap-3 text-sm bangla-text text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg">check_small</span>
+                            শান্ত ও নিরিবিলি জায়গায় বসুন
+                        </li>
+<li class="flex gap-3 text-sm bangla-text text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-lg">check_small</span>
+                            ইন্টারনেট সংযোগ পরীক্ষা করে নিন
+                        </li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Bottom Actions -->
+<div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto bangla-text px-8 py-4 bg-surface-container-highest text-on-surface-variant font-bold rounded-full hover:bg-surface-container-high transition-all">
+                হোম পেজে ফিরে যান
+            </button>
+<button class="w-full sm:w-auto bangla-text px-8 py-4 bg-gradient-to-r from-primary to-primary-container text-white font-bold rounded-full shadow-lg hover:opacity-90 transition-all active:scale-95">
+                ড্যাশবোর্ড দেখুন
+            </button>
+</div>
+</main>
+<!-- Support Floating Indicator -->
+<div class="fixed bottom-10 right-6 z-40">
+<button class="flex items-center gap-3 bg-white/90 backdrop-blur shadow-2xl p-3 pl-5 rounded-full border border-teal-100 hover:scale-105 transition-transform">
+<span class="bangla-text text-sm font-semibold text-teal-800">সাহায্য দরকার?</span>
+<div class="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-xl">support_agent</span>
+</div>
+</button>
+</div>
+<!-- Hidden Bottom Nav for Confirmation Success Screen as per UX Shell Rules -->
+<!-- Suppression applied because this is a Focused/Transactional Success Page -->
+</body></html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="light" lang="bn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DocTalk - Online Consultation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Hind+Siliguri:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#00201d",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "surface": "#f7fafa",
+                        "inverse-primary": "#7ad4e5",
+                        "outline-variant": "#bdc8cb",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#daf8ff",
+                        "surface-variant": "#e0e3e3",
+                        "primary-fixed": "#a0efff",
+                        "on-surface": "#181c1d",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d7dbdb",
+                        "secondary-fixed": "#8ef4e9",
+                        "tertiary": "#ad0e19",
+                        "on-surface-variant": "#3e494b",
+                        "on-tertiary-container": "#ffefed",
+                        "primary-fixed-dim": "#7ad4e5",
+                        "background": "#f7fafa",
+                        "secondary-fixed-dim": "#71d7cd",
+                        "surface-tint": "#006876",
+                        "primary": "#005f6c",
+                        "surface-container": "#ebeeee",
+                        "inverse-on-surface": "#eef1f1",
+                        "secondary-container": "#8bf1e6",
+                        "on-primary-fixed": "#001f25",
+                        "primary-container": "#007a8a",
+                        "surface-container-highest": "#e0e3e3",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e6e9e9",
+                        "tertiary-fixed-dim": "#ffb3ac",
+                        "on-secondary-container": "#006f67",
+                        "secondary": "#006a63",
+                        "tertiary-container": "#d12e2e",
+                        "on-tertiary-fixed": "#410003",
+                        "surface-container-low": "#f1f4f4",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f7fafa",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#004e59",
+                        "on-background": "#181c1d",
+                        "tertiary-fixed": "#ffdad6",
+                        "on-secondary-fixed-variant": "#00504a",
+                        "outline": "#6e797b",
+                        "on-tertiary-fixed-variant": "#930010",
+                        "inverse-surface": "#2d3131"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "Hind Siliguri"],
+                        "body": ["Inter", "Hind Siliguri"],
+                        "label": ["Inter", "Hind Siliguri"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', 'Hind_Siliguri', sans-serif;
+            line-height: 1.6;
+        }
+        h1, h2, h3, .brand-font {
+            font-family: 'Plus Jakarta Sans', 'Hind_Siliguri', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-hidden h-screen flex flex-col">
+<!-- NAVBAR -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <div class="text-xl font-bold text-teal-600">
+      DocTalk
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-6 items-center">
+      <a href="index.html" class="hover:text-teal-600">হোম</a>
+      <a href="doctor_search_profiles.html" class="hover:text-teal-600">ডাক্তার খুঁজুন</a>
+      <a href="patient_dashboard.html" class="hover:text-teal-600">ড্যাশবোর্ড</a>
+      <a href="medicine_store.html" class="hover:text-teal-600">মেডিসিন</a>
+      <a href="blood_donation_center.html" class="hover:text-teal-600">রক্তদান</a>
+      <a href="emergency_services_directory.html" class="hover:text-teal-600">জরুরি</a>
+      <a href="symptom_checker.html" class="hover:text-teal-600">সিম্পটম</a>
+      <a href="online_consultation_interface.html" class="hover:text-teal-600">কনসাল্ট</a>
+
+      <a href="#" class="px-4 py-1 bg-teal-600 text-white rounded-full">লগইন</a>
+      <a href="#" class="px-4 py-1 border border-teal-600 text-teal-600 rounded-full">নিবন্ধন</a>
+    </div>
+
+    <!-- Mobile Button -->
+    <div class="md:hidden">
+      <button onclick="toggleMenu()" class="text-2xl">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-3 bg-white">
+    <a href="index.html" class="block">হোম</a>
+    <a href="doctor_search_profiles.html" class="block">ডাক্তার খুঁজুন</a>
+    <a href="patient_dashboard.html" class="block">ড্যাশবোর্ড</a>
+    <a href="medicine_store.html" class="block">মেডিসিন</a>
+    <a href="blood_donation_center.html" class="block">রক্তদান</a>
+    <a href="emergency_services_directory.html" class="block">জরুরি</a>
+    <a href="symptom_checker.html" class="block">সিম্পটম</a>
+    <a href="online_consultation_interface.html" class="block">কনসাল্ট</a>
+
+    <a href="#" class="block bg-teal-600 text-white text-center py-2 rounded-full">লগইন</a>
+    <a href="#" class="block border border-teal-600 text-teal-600 text-center py-2 rounded-full">নিবন্ধন</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  }
+</script>
+
+<!-- Main Content Area: Video Call & Sidebar -->
+<main class="flex-grow flex p-4 gap-4 overflow-hidden">
+<!-- Video Feed Container -->
+<section class="flex-grow relative bg-on-secondary-fixed rounded-xl overflow-hidden group">
+<!-- Doctor's Full Screen Video (Simulated) -->
+<div class="absolute inset-0 w-full h-full">
+<img class="w-full h-full object-cover opacity-90" data-alt="professional middle-aged doctor wearing a stethoscope and white coat, smiling warmly at the camera in a modern clinical setting with soft depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD41ziGnZPbH0WykUe8s8ut015pJrjxPQSWeBY6mmyIt3c8XpAZpYKu_r-J-A6fJF5IHOfgwTH9IA4PdM4pJhMJfANgcQzGV01iTlZobVJPKCxuynTuXWEMZpVb6JWRtlPHTKktjLI5ihW90QDRhfS7tQW71IFh6qSNwXN4G7Vza05KLzvsxX9wKacXTaarDJQjz583RE0TfUXsVxWEl0AxOasE_6A90fnW4MfcEDlYDACw2xAz8xAnJ3XwHZPJslGu_7j0qUXYNJUx"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+</div>
+<!-- Doctor's Name Overlay -->
+<div class="absolute bottom-24 left-8 bg-surface/10 backdrop-blur-xl p-4 rounded-xl border border-outline-variant/20">
+<h2 class="text-white text-xl font-bold leading-none">ডাঃ আহমেদ হাসান</h2>
+<p class="text-primary-fixed text-sm mt-1">কার্ডিওলজিস্ট ও মেডিসিন বিশেষজ্ঞ</p>
+</div>
+<!-- Patient PIP (Picture-in-Picture) -->
+<div class="absolute top-6 right-6 w-48 aspect-video rounded-lg overflow-hidden border-2 border-white/20 shadow-2xl bg-slate-900">
+<img class="w-full h-full object-cover" data-alt="close-up of a young man looking into his laptop camera, neutral interior background, professional and calm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVpmARWjANPVWjm1E5MLyRVAmsX9MKta2IvwFpupcJWBO4dJUjHUKbUUDATa9mHtpVJwmQTB0HCJPo0Vc5EyHbpgKZQfZWn_vDhJ0tsjRHeqwrf5OW22LXShId_msLoz5L9Fdh-AAwEvrGkV5yisi3d0VcrfMh_I9v-542mgfqKNmKMrXZWoi0tixd4PndPLYXzQzV97fP89vrQAvC1uB9h2ysttzC2434a_3g9OG73ivMEum9Saa3rGIJsQ8SPjlzY1FXxGYRgdJI"/>
+<div class="absolute bottom-2 right-2 flex gap-1">
+<span class="material-symbols-outlined text-white text-xs bg-black/40 rounded-full p-1">mic_off</span>
+</div>
+</div>
+<!-- Video Controls Floating Bar -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-4 bg-white/10 backdrop-blur-2xl px-8 py-4 rounded-full border border-white/10">
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-highest text-on-surface hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-highest text-on-surface hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">videocam</span>
+</button>
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-surface-container-highest text-on-surface hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">screen_share</span>
+</button>
+<button class="w-16 h-12 flex items-center justify-center rounded-full bg-tertiary-container text-white hover:opacity-90 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call_end</span>
+</button>
+<div class="h-6 w-px bg-white/20 mx-2"></div>
+<button class="w-12 h-12 flex items-center justify-center rounded-full bg-primary-container text-white hover:bg-primary transition-all">
+<span class="material-symbols-outlined">medical_information</span>
+</button>
+</div>
+</section>
+<!-- Right Side Panel (Chat & Patient Summary) -->
+<aside class="w-96 flex flex-col gap-4 h-full">
+<!-- Patient Brief Summary Card -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-teal-800">পেশেন্ট সামারি</h3>
+<span class="material-symbols-outlined text-teal-600 text-sm">visibility</span>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">নাম:</span>
+<span class="font-semibold">তানভীর রহমান</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">রক্তের গ্রুপ:</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded text-xs font-bold">O+ (পজিটিভ)</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">পূর্ববর্তী সমস্যা:</span>
+<span class="font-semibold">উচ্চ রক্তচাপ</span>
+</div>
+</div>
+</div>
+<!-- Chat Window -->
+<div class="flex-grow bg-surface-container-lowest rounded-xl flex flex-col overflow-hidden border border-outline-variant/10 shadow-sm">
+<!-- Chat Header -->
+<div class="px-5 py-4 bg-primary/5 border-b border-outline-variant/10 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">chat_bubble</span>
+<h3 class="font-bold text-teal-900">মেসেজিং</h3>
+</div>
+<!-- Chat Messages Area -->
+<div class="flex-grow overflow-y-auto p-5 space-y-4">
+<!-- Message Doctor -->
+<div class="flex flex-col items-start max-w-[85%]">
+<div class="bg-surface-container-low text-on-surface-variant p-3 rounded-2xl rounded-tl-none text-sm leading-relaxed">
+                            আসসালামু আলাইকুম, তানভীর। আপনার আজকের রক্তচাপের রিপোর্টটি কি পাঠাতে পারবেন?
+                        </div>
+<span class="text-[10px] mt-1 ml-1 text-on-surface-variant/60">১০:১৫ AM</span>
+</div>
+<!-- Message Patient -->
+<div class="flex flex-col items-end self-end max-w-[85%]">
+<div class="bg-primary-container text-white p-3 rounded-2xl rounded-tr-none text-sm leading-relaxed">
+                            জি স্যার, আমি এখনই ছবি তুলে পাঠাচ্ছি।
+                        </div>
+<span class="text-[10px] mt-1 mr-1 text-on-surface-variant/60">১০:১৬ AM</span>
+</div>
+<!-- File Sharing Attachment -->
+<div class="flex flex-col items-end self-end max-w-[85%]">
+<div class="bg-surface-container-highest border border-primary/20 p-3 rounded-xl flex items-center gap-3 cursor-pointer hover:bg-surface-variant transition-colors">
+<div class="w-10 h-10 bg-primary/10 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<div class="overflow-hidden">
+<p class="text-xs font-bold truncate">Report_Oct_24.pdf</p>
+<p class="text-[10px] text-on-surface-variant">১.২ MB • PDF</p>
+</div>
+</div>
+<span class="text-[10px] mt-1 mr-1 text-on-surface-variant/60">১০:১৭ AM</span>
+</div>
+<!-- Doctor typing indicator -->
+<div class="flex items-center gap-2 text-on-surface-variant/40 text-[11px] italic">
+<div class="flex gap-1">
+<span class="w-1 h-1 bg-current rounded-full animate-bounce"></span>
+<span class="w-1 h-1 bg-current rounded-full animate-bounce [animation-delay:0.2s]"></span>
+<span class="w-1 h-1 bg-current rounded-full animate-bounce [animation-delay:0.4s]"></span>
+</div>
+                        ডাঃ আহমেদ লিখছেন...
+                    </div>
+</div>
+<!-- Chat Input Area -->
+<div class="p-4 bg-surface-container-lowest border-t border-outline-variant/10">
+<div class="flex items-center gap-2 bg-surface-container-low p-2 rounded-full border border-outline-variant/20 focus-within:ring-2 focus-within:ring-primary-fixed transition-all">
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<input class="flex-grow bg-transparent border-none focus:ring-0 text-sm placeholder:text-on-surface-variant/50 px-2" placeholder="কিছু লিখুন..." type="text"/>
+<button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Global Footer Branding (Subtle) -->
+<footer class="bg-slate-100/50 dark:bg-slate-950 px-8 py-3 flex justify-between items-center text-xs text-on-surface-variant/60 border-t border-outline-variant/5">
+<div>© ২০২৪ DocTalk. সকল স্বত্ব সংরক্ষিত।</div>
+<div class="flex gap-6">
+<a class="hover:text-teal-700" href="#">মেডিক্যাল ডিসক্লেমার</a>
+<a class="hover:text-teal-700" href="#">প্রাইভেসি পলিসি</a>
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 bg-secondary rounded-full"></span>
+<span>সুরক্ষিত এন্ড-টু-এন্ড এনক্রিপশন</span>
+</div>
+</div>
+</footer>
+</body></html>

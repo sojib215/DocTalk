@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+<html class="light" lang="bn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DocTalk Patient Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Hind+Siliguri:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#00201d",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "surface": "#f7fafa",
+                        "inverse-primary": "#7ad4e5",
+                        "outline-variant": "#bdc8cb",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#daf8ff",
+                        "surface-variant": "#e0e3e3",
+                        "primary-fixed": "#a0efff",
+                        "on-surface": "#181c1d",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d7dbdb",
+                        "secondary-fixed": "#8ef4e9",
+                        "tertiary": "#ad0e19",
+                        "on-surface-variant": "#3e494b",
+                        "on-tertiary-container": "#ffefed",
+                        "primary-fixed-dim": "#7ad4e5",
+                        "background": "#f7fafa",
+                        "secondary-fixed-dim": "#71d7cd",
+                        "surface-tint": "#006876",
+                        "primary": "#005f6c",
+                        "surface-container": "#ebeeee",
+                        "inverse-on-surface": "#eef1f1",
+                        "secondary-container": "#8bf1e6",
+                        "on-primary-fixed": "#001f25",
+                        "primary-container": "#007a8a",
+                        "surface-container-highest": "#e0e3e3",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e6e9e9",
+                        "tertiary-fixed-dim": "#ffb3ac",
+                        "on-secondary-container": "#006f67",
+                        "secondary": "#006a63",
+                        "tertiary-container": "#d12e2e",
+                        "on-tertiary-fixed": "#410003",
+                        "surface-container-low": "#f1f4f4",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f7fafa",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#004e59",
+                        "on-background": "#181c1d",
+                        "tertiary-fixed": "#ffdad6",
+                        "on-secondary-fixed-variant": "#00504a",
+                        "outline": "#6e797b",
+                        "on-tertiary-fixed-variant": "#930010",
+                        "inverse-surface": "#2d3131"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "Hind Siliguri"],
+                        "body": ["Inter", "Hind Siliguri"],
+                        "label": ["Inter", "Hind Siliguri"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', 'Hind Siliguri', sans-serif; line-height: 1.6; }
+        .font-headline { font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<div class="flex min-h-screen">
+<!-- Side Navigation -->
+<aside class="hidden md:flex flex-col h-screen w-64 bg-slate-50 dark:bg-slate-900 sticky top-0 py-6 font-['Plus_Jakarta_Sans','Hind_Siliguri'] text-base border-r-0">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">medical_services</span>
+</div>
+<span class="text-lg font-black text-teal-800">DocTalk</span>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Active Tab: পেশেন্ট ড্যাশবোর্ড -->
+<a class="bg-teal-600 text-white rounded-lg mx-2 my-1 px-4 py-3 flex items-center gap-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>ড্যাশবোর্ড</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg mx-2 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span>আমার অ্যাপয়েন্টমেন্ট</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg mx-2 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">description</span>
+<span>প্রেসক্রিপশন</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg mx-2 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>মেডিকেল রিপোর্ট</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 px-4 py-3 flex items-center gap-3 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg mx-2 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>সেটিংস</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center gap-3">
+<img alt="Patient avatar" class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a smiling middle-aged Bangladeshi man with glasses, professional lighting, soft background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLT7C5IRJeGCBO0nsU5-PvgqvwdmypcoazerMRSLGSc2EXfPgy_LxDMRIxsgApdmQakMNuC2wU01zX09z08AqQrTCuj_dbWAKcgwwJfFK4Eoz_f7sbuWwuCPap3pzA8ukP9zdEL-uxgKVZqfKsPiyPCINsrq_jhNqjdopK6vbSGTkUg9rpCZ3nN5dgqDm3uOXI-rtf8JiO6ZHRtl_Il2jZaurvxTn9F3F9x73yK3saG6Vyb-yokXfcJ16jDnOcitcAMTXUGHkfVfdX"/>
+<div class="overflow-hidden">
+<p class="text-sm font-bold truncate">আহমেদ কবির</p>
+<p class="text-xs text-on-surface-variant truncate">ID: DT-98234</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col min-w-0 bg-surface">
+<!-- Top App Bar -->
+<!-- NAVBAR -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <div class="text-xl font-bold text-teal-600">
+      DocTalk
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-6 items-center">
+      <a href="index.html" class="hover:text-teal-600">হোম</a>
+      <a href="doctor_search_profiles.html" class="hover:text-teal-600">ডাক্তার খুঁজুন</a>
+      <a href="patient_dashboard.html" class="hover:text-teal-600">ড্যাশবোর্ড</a>
+      <a href="medicine_store.html" class="hover:text-teal-600">মেডিসিন</a>
+      <a href="blood_donation_center.html" class="hover:text-teal-600">রক্তদান</a>
+      <a href="emergency_services_directory.html" class="hover:text-teal-600">জরুরি</a>
+      <a href="symptom_checker.html" class="hover:text-teal-600">সিম্পটম</a>
+      <a href="online_consultation_interface.html" class="hover:text-teal-600">কনসাল্ট</a>
+
+      <a href="#" class="px-4 py-1 bg-teal-600 text-white rounded-full">লগইন</a>
+      <a href="#" class="px-4 py-1 border border-teal-600 text-teal-600 rounded-full">নিবন্ধন</a>
+    </div>
+
+    <!-- Mobile Button -->
+    <div class="md:hidden">
+      <button onclick="toggleMenu()" class="text-2xl">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-3 bg-white">
+    <a href="index.html" class="block">হোম</a>
+    <a href="doctor_search_profiles.html" class="block">ডাক্তার খুঁজুন</a>
+    <a href="patient_dashboard.html" class="block">ড্যাশবোর্ড</a>
+    <a href="medicine_store.html" class="block">মেডিসিন</a>
+    <a href="blood_donation_center.html" class="block">রক্তদান</a>
+    <a href="emergency_services_directory.html" class="block">জরুরি</a>
+    <a href="symptom_checker.html" class="block">সিম্পটম</a>
+    <a href="online_consultation_interface.html" class="block">কনসাল্ট</a>
+
+    <a href="#" class="block bg-teal-600 text-white text-center py-2 rounded-full">লগইন</a>
+    <a href="#" class="block border border-teal-600 text-teal-600 text-center py-2 rounded-full">নিবন্ধন</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  }
+</script>
+
+<!-- Dashboard Content -->
+<div class="p-6 md:p-10 space-y-8 max-w-screen-2xl mx-auto w-full">
+<!-- Hero Bento Grid Profile -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Profile Card -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 flex flex-col md:flex-row gap-8 items-center border-none transition-all">
+<div class="relative">
+<div class="w-32 h-32 rounded-3xl overflow-hidden shadow-lg">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="Close up of a friendly adult man in casual attire, studio lighting, clean background for profile use" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtCQqZxzi_QamTeHdCaJGcdtKJx837rIF3qTtZ5UKsWQyrKq1R-UDEW2Jj-S4TzfAswBsvbaYrIyVgRBsGN0KQ6twTQSDJKcOCXz9-Km4lXfNN0CU354h1WJnzEDCjhySCzUCB0hfFiTHka18fTNM5JPtfDU1wujpN2VsFLk9IX0rKfNUNnGoR22IOqzsqPjry7Z_OLfXrCtJLx2cvAxwOYXemRyFGFy7EfMikA-MfIi82jc2lGM_JUVAGWfn3mclyfcR-dEzDyIAu"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-secondary text-white w-10 h-10 rounded-full flex items-center justify-center border-4 border-white">
+<span class="material-symbols-outlined text-sm">edit</span>
+</div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h2 class="text-3xl font-headline font-bold text-primary mb-1">আহমেদ কবির</h2>
+<p class="text-on-surface-variant font-medium mb-4">স্বাগতম, সুস্থ থাকুন। আপনার আজকের দিনটি ভালো কাটুক।</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-4">
+<div class="bg-surface-container-low px-4 py-2 rounded-lg">
+<span class="block text-xs text-on-surface-variant">বয়স</span>
+<span class="text-lg font-bold">৪৫ বছর</span>
+</div>
+<div class="bg-surface-container-low px-4 py-2 rounded-lg">
+<span class="block text-xs text-on-surface-variant">রক্তের গ্রুপ</span>
+<span class="text-lg font-bold text-tertiary">বি+ পজিটিভ</span>
+</div>
+<div class="bg-surface-container-low px-4 py-2 rounded-lg">
+<span class="block text-xs text-on-surface-variant">উচ্চতা</span>
+<span class="text-lg font-bold">৫'৮"</span>
+</div>
+<div class="bg-surface-container-low px-4 py-2 rounded-lg">
+<span class="block text-xs text-on-surface-variant">ওজন</span>
+<span class="text-lg font-bold">৭৪ কেজি</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Health Stats -->
+<div class="lg:col-span-4 bg-primary-container text-on-primary-container rounded-xl p-8 flex flex-col justify-center gap-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-8xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<h3 class="text-xl font-bold font-headline">আপনার স্বাস্থ্য স্কোর</h3>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-black">৮৫</span>
+<span class="text-xl opacity-80">/১০০</span>
+</div>
+<p class="text-sm">গত মাস থেকে ৫% উন্নতি হয়েছে। আপনার হাঁটার লক্ষ্যমাত্রা পূরণ করুন!</p>
+<button class="mt-2 bg-white text-primary px-6 py-2 rounded-full font-bold self-start text-sm">রিপোর্ট দেখুন</button>
+</div>
+</div>
+<!-- Main Layout Columns -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Appointments & History -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Upcoming Appointments -->
+<section>
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-headline font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">event_upcoming</span>
+                                    আসন্ন অ্যাপয়েন্টমেন্ট
+                                </h3>
+<a class="text-primary font-bold text-sm hover:underline transition-all" href="#">সবগুলো দেখুন</a>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col md:flex-row gap-6 items-center hover:bg-surface-container-high transition-colors group">
+<div class="bg-teal-50 w-20 h-20 rounded-2xl flex flex-col items-center justify-center text-teal-800 border border-teal-100">
+<span class="text-xs font-bold">অক্টোবর</span>
+<span class="text-2xl font-black">১২</span>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h4 class="text-lg font-bold text-on-surface">ডাঃ নাজমুল হাসান</h4>
+<p class="text-sm text-on-surface-variant">কার্ডিওলজিস্ট • গ্রিন লাইফ হাসপাতাল</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-4 mt-2">
+<span class="flex items-center gap-1 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">schedule</span> ১০:৩০ সকাল
+                                            </span>
+<span class="flex items-center gap-1 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">location_on</span> ধানমন্ডি, ঢাকা
+                                            </span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold">বিস্তারিত</button>
+<button class="bg-surface-container-high text-on-surface p-2 rounded-lg">
+<span class="material-symbols-outlined text-lg">videocam</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col md:flex-row gap-6 items-center hover:bg-surface-container-high transition-colors group">
+<div class="bg-slate-100 w-20 h-20 rounded-2xl flex flex-col items-center justify-center text-slate-700">
+<span class="text-xs font-bold">অক্টোবর</span>
+<span class="text-2xl font-black">১৫</span>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h4 class="text-lg font-bold text-on-surface">ডাঃ ফাতেমা বেগম</h4>
+<p class="text-sm text-on-surface-variant">চর্মরোগ বিশেষজ্ঞ • পপুলার ডায়াগনস্টিক</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-4 mt-2">
+<span class="flex items-center gap-1 text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">schedule</span> ০৪:০০ বিকাল
+                                            </span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-container-highest text-primary px-4 py-2 rounded-lg text-sm font-bold">পুনরায় নির্ধারণ</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Prescription Management -->
+<section>
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-headline font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">pill</span>
+                                    প্রেসক্রিপশন ম্যানেজমেন্ট
+                                </h3>
+<button class="bg-primary-container/20 text-primary px-4 py-2 rounded-full text-xs font-bold">নতুন যোগ করুন</button>
+</div>
+<!-- Active Medication Alerts -->
+<div class="bg-tertiary-container/10 border-l-4 border-tertiary rounded-lg p-5 mb-6 flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary">error</span>
+<div>
+<h4 class="font-bold text-on-tertiary-fixed-variant">মেডিসিন রিমাইন্ডার!</h4>
+<p class="text-sm text-on-tertiary-fixed-variant opacity-80">আপনার 'Nexum 20mg' ট্যাবলেটটি দুপুর ২:৩০ মিনিটে নেওয়ার কথা ছিল। আপনি কি নিয়েছেন?</p>
+<div class="mt-3 flex gap-3">
+<button class="bg-tertiary text-white px-4 py-1.5 rounded-full text-xs font-bold">হ্যাঁ, নিয়েছি</button>
+<button class="bg-white border border-tertiary/20 text-tertiary px-4 py-1.5 rounded-full text-xs font-bold">পরে মনে করান</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-5 rounded-xl border-none hover:shadow-md transition-all">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h5 class="font-bold">নাসাস্ফুলিন ড্রপ</h5>
+<p class="text-xs text-on-surface-variant">০৫ অক্টোবর, ২০২৪</p>
+</div>
+<span class="bg-green-100 text-green-700 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider">চলমান</span>
+</div>
+<div class="space-y-2 text-sm">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">history</span> ১০ দিন মেয়াদের ৩য় দিন
+                                        </div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">wb_sunny</span> সকাল - দুপুর - রাত
+                                        </div>
+</div>
+<button class="w-full mt-4 py-2 text-primary font-bold text-sm bg-surface-container-low rounded-lg">প্রেসক্রিপশন দেখুন</button>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl border-none hover:shadow-md transition-all">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h5 class="font-bold">প্যারাসিটামল ৫০০মিগ্রা</h5>
+<p class="text-xs text-on-surface-variant">২৮ সেপ্টেম্বর, ২০২৪</p>
+</div>
+<span class="bg-slate-100 text-slate-500 px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider">সম্পন্ন</span>
+</div>
+<div class="space-y-2 text-sm">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">history</span> ৭ দিন মেয়াদ ছিল
+                                        </div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">check_circle</span> কোর্স সম্পন্ন
+                                        </div>
+</div>
+<button class="w-full mt-4 py-2 text-on-surface-variant font-bold text-sm bg-surface-container-low rounded-lg">রিফিল অর্ডার করুন</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Quick Links & Recent History -->
+<div class="space-y-8">
+<!-- Medical History Quick Links -->
+<section class="bg-surface-container-low rounded-xl p-6">
+<h3 class="text-lg font-headline font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">folder_shared</span>
+                                মেডিকেল হিস্ট্রি
+                            </h3>
+<div class="space-y-3">
+<a class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-white transition-all group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">lab_profile</span>
+<span class="font-medium">ল্যাব টেস্ট রিপোর্ট</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-white transition-all group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">vaccines</span>
+<span class="font-medium">টিকা প্রদানের রেকর্ড</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-white transition-all group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">emergency</span>
+<span class="font-medium">অ্যালার্জি প্রোফাইল</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-xl hover:bg-white transition-all group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">history</span>
+<span class="font-medium">অপারেশন হিস্ট্রি</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- Recent Consultations Summary -->
+<section class="bg-surface-container-low rounded-xl p-6">
+<h3 class="text-lg font-headline font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">chat</span>
+                                সাম্প্রতিক কনসাল্টেশন
+                            </h3>
+<div class="relative pl-6 space-y-6 before:content-[''] before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-outline-variant">
+<div class="relative">
+<span class="absolute -left-[21px] top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-white"></span>
+<div class="mb-1">
+<span class="text-xs font-bold text-on-surface-variant">২২ সেপ্টেম্বর, ২০২৪</span>
+<h5 class="font-bold text-sm">ডাঃ ইশরাত জাহান</h5>
+<p class="text-xs text-on-surface-variant">জেনারেল ফিজিশিয়ান</p>
+</div>
+<p class="text-xs leading-relaxed italic">"রক্তচাপ নিয়ন্ত্রণে আছে, তবে খাবারের ব্যাপারে আরও সতর্ক থাকতে হবে।"</p>
+</div>
+<div class="relative">
+<span class="absolute -left-[21px] top-1.5 w-4 h-4 rounded-full bg-outline-variant border-4 border-white"></span>
+<div class="mb-1">
+<span class="text-xs font-bold text-on-surface-variant">১০ আগস্ট, ২০২৪</span>
+<h5 class="font-bold text-sm">ডাঃ সাদেকুল ইসলাম</h5>
+<p class="text-xs text-on-surface-variant">অর্থোপেডিক</p>
+</div>
+<p class="text-xs leading-relaxed italic">"পায়ের ব্যথার জন্য হালকা ব্যায়াম চালিয়ে যান।"</p>
+</div>
+</div>
+<button class="w-full mt-6 py-3 border border-primary/20 text-primary font-bold rounded-xl hover:bg-white transition-all">কনসাল্টেশন নোট ডাউনলোড</button>
+</section>
+</div>
+</div>
+</div>
+<!-- Footer Section -->
+<footer class="w-full mt-auto pt-12 pb-8 bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="md:col-span-2">
+<span class="text-xl font-bold text-teal-800 mb-4 block">DocTalk</span>
+<p class="text-slate-500 dark:text-slate-400 text-sm max-w-md font-['Inter','Hind_Siliguri'] leading-[1.6]">
+                            DocTalk বাংলাদেশের একটি আধুনিক ডিজিটাল স্বাস্থ্যসেবা প্ল্যাটফর্ম। আমরা বিশ্বাস করি সবার জন্য মানসম্মত চিকিৎসা সেবা পাওয়া একটি অধিকার।
+                        </p>
+</div>
+<div>
+<h6 class="font-bold text-teal-800 dark:text-teal-300 mb-4">দ্রুত লিংক</h6>
+<ul class="space-y-2 text-sm">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 underline transition-all" href="#">জরুরি যোগাযোগ</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 underline transition-all" href="#">মেডিকেল ডিসক্লেমার</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 underline transition-all" href="#">প্রাইভেসি পলিসি</a></li>
+</ul>
+</div>
+<div>
+<h6 class="font-bold text-teal-800 dark:text-teal-300 mb-4">কপিরাইট</h6>
+<p class="text-slate-500 dark:text-slate-400 text-sm">
+                            © ২০২৪ DocTalk. সকল স্বত্ব সংরক্ষিত।
+                        </p>
+</div>
+</div>
+</footer>
+</main>
+</div>
+<!-- Floating Action Button - suppressed based on context, but shown for main dashboard quick help -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-[60]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</body></html>

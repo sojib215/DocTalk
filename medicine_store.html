@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="light" lang="bn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DocTalk Medicine Store</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Hind+Siliguri:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#00201d",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "surface": "#f7fafa",
+                    "inverse-primary": "#7ad4e5",
+                    "outline-variant": "#bdc8cb",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#daf8ff",
+                    "surface-variant": "#e0e3e3",
+                    "primary-fixed": "#a0efff",
+                    "on-surface": "#181c1d",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d7dbdb",
+                    "secondary-fixed": "#8ef4e9",
+                    "tertiary": "#ad0e19",
+                    "on-surface-variant": "#3e494b",
+                    "on-tertiary-container": "#ffefed",
+                    "primary-fixed-dim": "#7ad4e5",
+                    "background": "#f7fafa",
+                    "secondary-fixed-dim": "#71d7cd",
+                    "surface-tint": "#006876",
+                    "primary": "#005f6c",
+                    "surface-container": "#ebeeee",
+                    "inverse-on-surface": "#eef1f1",
+                    "secondary-container": "#8bf1e6",
+                    "on-primary-fixed": "#001f25",
+                    "primary-container": "#007a8a",
+                    "surface-container-highest": "#e0e3e3",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e6e9e9",
+                    "tertiary-fixed-dim": "#ffb3ac",
+                    "on-secondary-container": "#006f67",
+                    "secondary": "#006a63",
+                    "tertiary-container": "#d12e2e",
+                    "on-tertiary-fixed": "#410003",
+                    "surface-container-low": "#f1f4f4",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f7fafa",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#004e59",
+                    "on-background": "#181c1d",
+                    "tertiary-fixed": "#ffdad6",
+                    "on-secondary-fixed-variant": "#00504a",
+                    "outline": "#6e797b",
+                    "on-tertiary-fixed-variant": "#930010",
+                    "inverse-surface": "#2d3131"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "1rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans", "Hind Siliguri"],
+                    "body": ["Inter", "Hind Siliguri"],
+                    "label": ["Inter", "Hind Siliguri"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', 'Hind Siliguri', sans-serif; }
+        .font-headline { font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(12px); background-color: rgba(247, 250, 250, 0.8); }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- NAVBAR -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <div class="text-xl font-bold text-teal-600">
+      DocTalk
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-6 items-center">
+      <a href="index.html" class="hover:text-teal-600">হোম</a>
+      <a href="doctor_search_profiles.html" class="hover:text-teal-600">ডাক্তার খুঁজুন</a>
+      <a href="patient_dashboard.html" class="hover:text-teal-600">ড্যাশবোর্ড</a>
+      <a href="medicine_store.html" class="hover:text-teal-600">মেডিসিন</a>
+      <a href="blood_donation_center.html" class="hover:text-teal-600">রক্তদান</a>
+      <a href="emergency_services_directory.html" class="hover:text-teal-600">জরুরি</a>
+      <a href="symptom_checker.html" class="hover:text-teal-600">সিম্পটম</a>
+      <a href="online_consultation_interface.html" class="hover:text-teal-600">কনসাল্ট</a>
+
+      <a href="#" class="px-4 py-1 bg-teal-600 text-white rounded-full">লগইন</a>
+      <a href="#" class="px-4 py-1 border border-teal-600 text-teal-600 rounded-full">নিবন্ধন</a>
+    </div>
+
+    <!-- Mobile Button -->
+    <div class="md:hidden">
+      <button onclick="toggleMenu()" class="text-2xl">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-3 bg-white">
+    <a href="index.html" class="block">হোম</a>
+    <a href="doctor_search_profiles.html" class="block">ডাক্তার খুঁজুন</a>
+    <a href="patient_dashboard.html" class="block">ড্যাশবোর্ড</a>
+    <a href="medicine_store.html" class="block">মেডিসিন</a>
+    <a href="blood_donation_center.html" class="block">রক্তদান</a>
+    <a href="emergency_services_directory.html" class="block">জরুরি</a>
+    <a href="symptom_checker.html" class="block">সিম্পটম</a>
+    <a href="online_consultation_interface.html" class="block">কনসাল্ট</a>
+
+    <a href="#" class="block bg-teal-600 text-white text-center py-2 rounded-full">লগইন</a>
+    <a href="#" class="block border border-teal-600 text-teal-600 text-center py-2 rounded-full">নিবন্ধন</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  }
+</script>
+
+<main class="flex-grow max-w-screen-2xl mx-auto w-full px-6 py-8 grid grid-cols-12 gap-8">
+<!-- Sidebar Filter / Categories -->
+<aside class="col-span-3 space-y-8">
+<div class="bg-surface-container-low rounded-xl p-6 space-y-6">
+<h2 class="font-headline text-xl font-bold text-primary">বিভাগসমূহ</h2>
+<nav class="flex flex-col gap-2">
+<button class="flex items-center gap-3 px-4 py-3 bg-primary text-on-primary rounded-lg font-medium transition-all">
+<span class="material-symbols-outlined" data-icon="medication">medication</span>
+                        সব ওষুধ
+                    </button>
+<button class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="healing">healing</span>
+                        ওটিসি (OTC)
+                    </button>
+<button class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="prescriptions">prescriptions</span>
+                        প্রেসক্রিপশন ওষুধ
+                    </button>
+<button class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="sanitizer">sanitizer</span>
+                        পার্সোনাল কেয়ার
+                    </button>
+<button class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="baby_changing_station">baby_changing_station</span>
+                        শিশুর যত্ন
+                    </button>
+<button class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-highest rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="nutrition">nutrition</span>
+                        সাপ্লিমেন্ট
+                    </button>
+</nav>
+</div>
+<div class="bg-tertiary-container/10 border border-tertiary-container/20 rounded-xl p-6">
+<div class="flex items-start gap-3 text-tertiary">
+<span class="material-symbols-outlined" data-icon="info" style="font-variation-settings: 'FILL' 1;">info</span>
+<div>
+<p class="font-bold text-sm mb-1">প্রেসক্রিপশন সতর্কতা</p>
+<p class="text-xs leading-relaxed opacity-90">নির্দিষ্ট কিছু ওষুধ কেনার জন্য নিবন্ধিত চিকিৎসকের প্রেসক্রিপশন আপলোড করা বাধ্যতামূলক।</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Listing & Search -->
+<section class="col-span-6 space-y-8">
+<!-- Search Bar Area -->
+<div class="relative group">
+<input class="w-full h-14 pl-14 pr-6 bg-surface-container-lowest rounded-full border-none ring-1 ring-outline-variant/30 focus:ring-2 focus:ring-primary-fixed transition-all text-lg font-body" placeholder="ওষুধের নাম বা ক্যাটাগরি দিয়ে সার্চ করুন..." type="text"/>
+<span class="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-on-surface-variant/60 group-focus-within:text-primary" data-icon="search">search</span>
+</div>
+<!-- Bento Featured -->
+<div class="grid grid-cols-2 gap-4">
+<div class="relative overflow-hidden rounded-xl h-48 bg-gradient-to-br from-primary to-primary-container p-8 text-on-primary group">
+<div class="relative z-10">
+<h3 class="text-2xl font-bold mb-2">গৃহস্থালী ওটিসি কিট</h3>
+<p class="text-sm opacity-80 max-w-[180px]">প্রয়োজনীয় সব প্রাথমিক ওষুধ এখন এক প্যাকেজেই।</p>
+<button class="mt-4 px-4 py-2 bg-surface text-primary rounded-full text-xs font-bold uppercase tracking-wider">এখনই কিনুন</button>
+</div>
+<div class="absolute right-[-20px] bottom-[-20px] opacity-20 scale-150 group-hover:scale-175 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]" data-icon="medical_services">medical_services</span>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl h-48 bg-surface-container-highest p-8 text-on-surface group">
+<div class="relative z-10">
+<h3 class="text-2xl font-bold mb-2">প্রেসক্রিপশন আপলোড</h3>
+<p class="text-sm opacity-80 max-w-[180px]">সহজেই প্রেসক্রিপশন পাঠিয়ে আপনার ওষুধ অর্ডার করুন।</p>
+<button class="mt-4 px-4 py-2 bg-primary text-on-primary rounded-full text-xs font-bold uppercase tracking-wider">আপলোড করুন</button>
+</div>
+<div class="absolute right-[-10px] bottom-[-10px] opacity-10 scale-125">
+<span class="material-symbols-outlined text-[100px]" data-icon="upload_file">upload_file</span>
+</div>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-2 gap-6">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+<div class="aspect-square rounded-lg bg-surface-container overflow-hidden mb-4 relative">
+<img alt="Paracetamol Tablet" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="close-up of medical pill strips on a clean white surface with soft pharmaceutical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGyCGhLTdCFBYPamnFkxRghaKokn2N1IVk-bOD6HJNNeINpDC0pK7ZytaSyNCK3-EbmSlaTK1rgj7LlNnwmlUNWMUcevtrj6L9V5RXhiwbgEGERQ6xAjM8s1xKl3olYnWSyvwC-a00Q75LVE6mmPVN2NJ2D8SiHR_cnwQ9UpXugIipXeL5uAbLzMUyDkAFVEXrYNJi8c3kqd78Ne1kVnf2vKkTVpaCSo3hOQ-qyS6hyqXIsO-6jpFiHAzKKjO_y51kyJn3h7LW_jZK"/>
+<div class="absolute top-2 right-2 bg-surface/90 px-2 py-1 rounded text-[10px] font-bold text-primary">ওটিসি</div>
+</div>
+<h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">নাপা এক্সট্রেন্ড (৫০০ মি.গ্রা.)</h4>
+<p class="text-xs text-on-surface-variant mb-3">প্যারাসিটামল • বেক্সিমকো ফার্মা</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-bold text-lg text-primary">৳ ১৫.০০</span>
+<button class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2 (Prescription Required) -->
+<div class="bg-surface-container-lowest rounded-xl p-4 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+<div class="aspect-square rounded-lg bg-surface-container overflow-hidden mb-4 relative">
+<img alt="Antibiotic Capsule" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="macro shot of blue and white medical capsules on a clinical reflective surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAHW1o7iz6dv0Vi4alj3E5MrGTOVvANvluyeCRM069o_us3qCuqlaih2yI80Lz0WyAZ-moTLqGetro6152SkQeNVuEetOe5vTkQrnT15ZE1eYu2pPEXOSsaKbNXqFsBzTlb_qodNtt5xZ6eeuGrrzhkMiaHxK0MB3wSXF91wC5pylQ6TpnVJDDDdbsHWb9P7WpXPWX-zvG898wY-qF5yIFAlafzEPCkgfK7LXHGVRvwS1SSBQBBmYsjfQlkCQ1EU4wKh-fhUCRXatd"/>
+<div class="absolute top-2 right-2 bg-tertiary-container text-on-tertiary-container px-2 py-1 rounded text-[10px] font-bold">প্রেসক্রিপশন আবশ্যক</div>
+</div>
+<h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">অ্যামোক্সাসিলিন (২৫০ মি.গ্রা.)</h4>
+<p class="text-xs text-on-surface-variant mb-3">অ্যান্টিবায়োটিক • স্কয়ার ফার্মা</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-bold text-lg text-primary">৳ ১২০.০০</span>
+<button class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+<div class="aspect-square rounded-lg bg-surface-container overflow-hidden mb-4 relative">
+<img alt="Hand Sanitizer" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="modern design of a clear hand sanitizer bottle in a bright minimalist bathroom setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFmvf_ueSZ2HnmdKbxRibc_lZ8VOBVNA3xfjYC615ZUr4-ryZbWVDKgkqvVb5G3bZLbaEdGDfHyUfP_Vy1TgVTrFg_WIAuUAUm64fKQhDfNCb0NoHNviFsZEESp5gowC2pcAMBV79iJFz9R0vYbyYoEBBvHEmACVt_yikA1IRObLs46GPhqB1dLRdUzaGT4zKF1Ug16Ol4miGH04ZY00vzGuynx0BXI2CrzUKoGF66rUtd9AVAxuQUY-EecG6ML8cDoln83WtcIKT3"/>
+</div>
+<h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">সেভলন হ্যান্ড স্যানিটাইজার</h4>
+<p class="text-xs text-on-surface-variant mb-3">পার্সোনাল কেয়ার • এসিআই লিমিটেড</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-bold text-lg text-primary">৳ ৮৫.০০</span>
+<button class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 hover:shadow-xl hover:shadow-primary/5 transition-all group">
+<div class="aspect-square rounded-lg bg-surface-container overflow-hidden mb-4 relative">
+<img alt="Vitamin C" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="bright orange vitamin bottles and effervescent tablets arranged neatly with citrus fruit slices" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcPu68LOOQM02U4lOWTVoYKbgmM1K7vdQO_qW70AMBpssoq3tw0LjTL7-y-zlvkt65-Nj917bunt22EEwLW-8Ty4-DiKdlz5WaliXEuMR67bBivN8q1OoRyEK7XjAOLgsM-bvW0ViqFo_KzrDlAMdKjgFhfhUE_asHuN0pp_8V2mpxr-C9ufx3IopSx-5-J_mT9XGrdqAMhAO-LU9B_nnBNZFZG6Bgzqv-KzQ2yac12s3tBRKXjAikLlELARDOkKll15qr3cpIh60w"/>
+</div>
+<h4 class="font-bold text-on-surface group-hover:text-primary transition-colors">ভিটামিন সি চুয়েবল</h4>
+<p class="text-xs text-on-surface-variant mb-3">সাপ্লিমেন্ট • হেলথকেয়ার ফার্মা</p>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-bold text-lg text-primary">৳ ২১০.০০</span>
+<button class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Shopping Cart Summary -->
+<aside class="col-span-3">
+<div class="bg-surface-container-lowest rounded-xl p-6 sticky top-24 border border-outline-variant/10 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-headline text-lg font-bold">শপিং কার্ট</h3>
+<span class="bg-primary-container text-on-primary-container px-2 py-0.5 rounded-full text-xs font-bold">২টি আইটেম</span>
+</div>
+<div class="space-y-4 mb-8">
+<!-- Cart Item -->
+<div class="flex gap-3">
+<div class="w-12 h-12 rounded bg-surface-container-low flex-shrink-0 overflow-hidden">
+<img alt="product" data-alt="small thumbnail of a medical product on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbeEwXIwWKtNhs5e2x20x7yg196-awaoPETNHnIOYwGeabInk3O385YA1LxpYtSAaxA4xbWmX704WZThcMPfTyJG75hv1ks4LrnsTsNaURu8kKAnYYFaWHpPW8jqlJRvoqiRCWPKJX7aH5sLR79RMxu93xsvGaBJZIa0FnUfQmQ1eTUV-jBIn4WxfhEdjGQ81KU7Zr7729ZnKujdlCZbQ5aFiWK6eJjfUaYC-JaSPzgcDsvOItymru1FiXMe-FSofyHZP2vRinoOy-"/>
+</div>
+<div class="flex-grow min-w-0">
+<p class="text-sm font-semibold truncate">নাপা এক্সট্রেন্ড</p>
+<p class="text-xs text-on-surface-variant">১ পাতা (১০টি)</p>
+<div class="flex items-center justify-between mt-1">
+<span class="text-xs font-bold">৳ ১৫.০০</span>
+<div class="flex items-center gap-2">
+<button class="text-primary hover:bg-primary/10 rounded">
+<span class="material-symbols-outlined text-sm" data-icon="remove">remove</span>
+</button>
+<span class="text-xs font-bold">১</span>
+<button class="text-primary hover:bg-primary/10 rounded">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="flex gap-3">
+<div class="w-12 h-12 rounded bg-surface-container-low flex-shrink-0 overflow-hidden">
+<img alt="product" data-alt="small thumbnail of a medical product on white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE5Ai_5tBfyXbNz7qAOIg0i8GAcM0HRkV8ASSIU053ybLg-ScfXaCF7IxL9LqP2gRvMy_4jKG8Pb5uMK7IkeIuRWCVLRXdEPNRxyMewmdRj1WX1Cw0iwicSsKY2T1hLYFgiEwcBgKNzCm0zqEExl-Qmz5shtAx90apcwgT7JvZvrM-fJmfSZeUU737rHG92r8Hc9VkJtZor6g23_hVZnk1_WGctnaDFNtTLZ5lBLOI1uP3yoqvh40Tn0_dWC9Xd_U_KiKmhjZoFz-c"/>
+</div>
+<div class="flex-grow min-w-0">
+<p class="text-sm font-semibold truncate">সেভলন হ্যান্ড স্যানিটাইজার</p>
+<p class="text-xs text-on-surface-variant">১০০ মিলি</p>
+<div class="flex items-center justify-between mt-1">
+<span class="text-xs font-bold">৳ ৮৫.০০</span>
+<div class="flex items-center gap-2">
+<button class="text-primary hover:bg-primary/10 rounded">
+<span class="material-symbols-outlined text-sm" data-icon="remove">remove</span>
+</button>
+<span class="text-xs font-bold">১</span>
+<button class="text-primary hover:bg-primary/10 rounded">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/20 pt-4 space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">মোট আইটেম</span>
+<span>৳ ১০০.০০</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">ডেলিভারি চার্জ</span>
+<span>৳ ৬০.০০</span>
+</div>
+<div class="flex justify-between text-lg font-bold text-primary pt-2">
+<span>সর্বমোট</span>
+<span>৳ ১৬০.০০</span>
+</div>
+</div>
+<button class="w-full mt-6 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full font-bold text-center shadow-lg shadow-primary/20 hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                    চেকআউট করুন
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-[10px] text-center text-on-surface-variant mt-4 leading-relaxed">
+                    নিরাপদ পেমেন্ট এবং দ্রুত ডেলিভারি নিশ্চিত। <br/>ক্যাশ অন ডেলিভারি পাওয়া যাচ্ছে।
+                </p>
+</div>
+</aside>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-950 font-['Inter','Hind_Siliguri'] text-sm leading-[1.6] w-full mt-auto pt-12 pb-8 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-2">
+<span class="text-xl font-bold text-teal-800">DocTalk</span>
+<p class="mt-4 text-slate-500 dark:text-slate-400 max-w-sm">DocTalk একটি আধুনিক স্বাস্থ্যসেবা প্ল্যাটফর্ম যা আপনাকে ডাক্তারদের সাথে সংযুক্ত করে এবং ঘরে বসেই মানসম্মত ওষুধ সরবরাহ নিশ্চিত করে।</p>
+</div>
+<div>
+<h4 class="font-bold text-teal-800 dark:text-teal-300 mb-4">প্রয়োজনীয় লিংক</h4>
+<nav class="flex flex-col gap-2">
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 underline transition-all" href="#">জরুরি যোগাযোগ</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 underline transition-all" href="#">মেডিক্যাল ডিসক্লেমার</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 underline transition-all" href="#">প্রাইভেসি পলিসি</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 underline transition-all" href="#">টার্মস অফ সার্ভিস</a>
+</nav>
+</div>
+<div>
+<h4 class="font-bold text-teal-800 dark:text-teal-300 mb-4">সহযোগিতা</h4>
+<p class="text-slate-500 dark:text-slate-400 mb-2">হেল্পলাইন: +৮৮০ ১২৩৪ ৫৬৭৮৯০</p>
+<div class="flex gap-4 mt-4">
+<span class="material-symbols-outlined text-slate-400" data-icon="facebook">social_leaderboard</span>
+<span class="material-symbols-outlined text-slate-400" data-icon="public">public</span>
+<span class="material-symbols-outlined text-slate-400" data-icon="mail">mail</span>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-slate-500">
+<p>© ২০২৪ DocTalk. সকল স্বত্ব সংরক্ষিত।</p>
+<div class="flex gap-4">
+<img alt="Payment Partners" class="h-6 opacity-60 grayscale hover:grayscale-0 transition-all" data-alt="logos of major credit card and digital payment providers in a clean line" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvOGHKqCfgNFbxSvjfOmi3Eg_4VHW1ETKNRfLCPOlE5oh1so81s72fieSs39noVLfxzL9v0yCyRgreka_9pUagji84wzsnkDDHH72Nfa2sEV0FH_8RgXB4_a4OOC72z9KrOpm8Onol_dfpmgEFceVOuGccoBIHCLVV7WNFlrfGgJ47NH7zoE6SBK_jUk5-0zX0M_E1PvVCBygtyunp-Kj1sn5psvHRKpHZG7BoHJizBMffFMvOFapXbS6P-RKWmndOMED1LdRZB9Dd"/>
+</div>
+</div>
+</footer>
+</body></html>

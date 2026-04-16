@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="light" lang="bn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Hind+Siliguri:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#00201d",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "surface": "#f7fafa",
+                    "inverse-primary": "#7ad4e5",
+                    "outline-variant": "#bdc8cb",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#daf8ff",
+                    "surface-variant": "#e0e3e3",
+                    "primary-fixed": "#a0efff",
+                    "on-surface": "#181c1d",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#d7dbdb",
+                    "secondary-fixed": "#8ef4e9",
+                    "tertiary": "#ad0e19",
+                    "on-surface-variant": "#3e494b",
+                    "on-tertiary-container": "#ffefed",
+                    "primary-fixed-dim": "#7ad4e5",
+                    "background": "#f7fafa",
+                    "secondary-fixed-dim": "#71d7cd",
+                    "surface-tint": "#006876",
+                    "primary": "#005f6c",
+                    "surface-container": "#ebeeee",
+                    "inverse-on-surface": "#eef1f1",
+                    "secondary-container": "#8bf1e6",
+                    "on-primary-fixed": "#001f25",
+                    "primary-container": "#007a8a",
+                    "surface-container-highest": "#e0e3e3",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#e6e9e9",
+                    "tertiary-fixed-dim": "#ffb3ac",
+                    "on-secondary-container": "#006f67",
+                    "secondary": "#006a63",
+                    "tertiary-container": "#d12e2e",
+                    "on-tertiary-fixed": "#410003",
+                    "surface-container-low": "#f1f4f4",
+                    "on-primary": "#ffffff",
+                    "surface-bright": "#f7fafa",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#004e59",
+                    "on-background": "#181c1d",
+                    "tertiary-fixed": "#ffdad6",
+                    "on-secondary-fixed-variant": "#00504a",
+                    "outline": "#6e797b",
+                    "on-tertiary-fixed-variant": "#930010",
+                    "inverse-surface": "#2d3131"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans", "Hind Siliguri"],
+                    "body": ["Inter", "Hind Siliguri"],
+                    "label": ["Inter", "Hind Siliguri"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', 'Hind Siliguri', sans-serif; }
+        .bangla-header { font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif; line-height: 1.6; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- NAVBAR -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <div class="text-xl font-bold text-teal-600">
+      DocTalk
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-6 items-center">
+      <a href="index.html" class="hover:text-teal-600">হোম</a>
+      <a href="doctor_search_profiles.html" class="hover:text-teal-600">ডাক্তার খুঁজুন</a>
+      <a href="patient_dashboard.html" class="hover:text-teal-600">ড্যাশবোর্ড</a>
+      <a href="medicine_store.html" class="hover:text-teal-600">মেডিসিন</a>
+      <a href="blood_donation_center.html" class="hover:text-teal-600">রক্তদান</a>
+      <a href="emergency_services_directory.html" class="hover:text-teal-600">জরুরি</a>
+      <a href="symptom_checker.html" class="hover:text-teal-600">সিম্পটম</a>
+      <a href="online_consultation_interface.html" class="hover:text-teal-600">কনসাল্ট</a>
+
+      <a href="#" class="px-4 py-1 bg-teal-600 text-white rounded-full">লগইন</a>
+      <a href="#" class="px-4 py-1 border border-teal-600 text-teal-600 rounded-full">নিবন্ধন</a>
+    </div>
+
+    <!-- Mobile Button -->
+    <div class="md:hidden">
+      <button onclick="toggleMenu()" class="text-2xl">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden px-4 pb-4 space-y-3 bg-white">
+    <a href="index.html" class="block">হোম</a>
+    <a href="doctor_search_profiles.html" class="block">ডাক্তার খুঁজুন</a>
+    <a href="patient_dashboard.html" class="block">ড্যাশবোর্ড</a>
+    <a href="medicine_store.html" class="block">মেডিসিন</a>
+    <a href="blood_donation_center.html" class="block">রক্তদান</a>
+    <a href="emergency_services_directory.html" class="block">জরুরি</a>
+    <a href="symptom_checker.html" class="block">সিম্পটম</a>
+    <a href="online_consultation_interface.html" class="block">কনসাল্ট</a>
+
+    <a href="#" class="block bg-teal-600 text-white text-center py-2 rounded-full">লগইন</a>
+    <a href="#" class="block border border-teal-600 text-teal-600 text-center py-2 rounded-full">নিবন্ধন</a>
+  </div>
+</nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+  }
+</script>
+
+<main class="flex-grow">
+<!-- Emergency Disclaimer Banner -->
+<div class="bg-tertiary-container/10 backdrop-blur-sm border-b border-tertiary-container/20 py-4 px-6 sticky top-[64px] z-40">
+<div class="max-w-7xl mx-auto flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary text-3xl shrink-0" data-icon="report" style="font-variation-settings: 'FILL' 1;">report</span>
+<p class="text-on-tertiary-fixed-variant bangla-header font-semibold text-base">
+                    মেডিক্যাল ডিসক্লেইমার: এই তালিকাটি শুধুমাত্র তথ্যের জন্য। জীবন-ঝুঁকিপূর্ণ জরুরি অবস্থায় সরাসরি নিকটস্থ হাসপাতালে যোগাযোগ করুন অথবা ৯৯৯ কল করুন।
+                </p>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-6 py-12">
+<!-- Hero Search Section -->
+<div class="relative rounded-xl overflow-hidden mb-12 p-12 bg-gradient-to-br from-primary to-primary-container text-on-primary">
+<div class="absolute inset-0 opacity-10">
+<img alt="Background texture" class="w-full h-full object-cover" data-alt="abstract smooth gradient texture of medical teal and white with soft blurred flowing shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuDMYAmBLAWsf5Gx7emrppxnsEsJvtM-kCg_BbfkKAjLH3NPWDDaPFBfNVmZFKuNcNczJ6xDfprIwiHy0LWNg20v0BKoogzef7jIdIa_YEzvRZZkfOO9-X8U1oDOfMqXY83oBKcjK2EjLxC1zA1uatonsIDQdgZcXdO4fgJobhmvvrKKMLmzNnPS5Qp_t_Jcmzh1POkvS9ek8oe5uAml4RA_lD36BK-qadXyi9W57VoNJRt_WZJSJi_1pto2J_KLaVOPBMjGOfi0WB"/>
+</div>
+<div class="relative z-10 max-w-2xl">
+<h1 class="text-4xl font-extrabold bangla-header mb-4">জরুরি সেবা ডিরেক্টরি</h1>
+<p class="text-on-primary-container text-lg mb-8 bangla-header">আপনার জেলা বা উপজেলা অনুযায়ী দ্রুত প্রয়োজনীয় জরুরি সেবা খুঁজে নিন।</p>
+<div class="flex flex-col md:flex-row gap-4 bg-surface-container-lowest/10 p-2 rounded-xl backdrop-blur-md">
+<div class="flex-1 flex items-center bg-surface-container-lowest rounded-lg px-4 py-2">
+<span class="material-symbols-outlined text-outline" data-icon="location_on">location_on</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-outline-variant bangla-header" placeholder="জেলা বা উপজেলা লিখুন..." type="text"/>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-8 py-3 rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+                            অনুসন্ধান করুন
+                        </button>
+</div>
+</div>
+</div>
+<!-- Categories Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+<!-- Category: Hospitals -->
+<section class="space-y-6">
+<div class="flex items-center gap-3 px-2">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="local_hospital" style="font-variation-settings: 'FILL' 1;">local_hospital</span>
+</div>
+<div>
+<h2 class="text-xl font-bold bangla-header text-primary">হাসপাতাল সমূহ</h2>
+<p class="text-sm text-outline bangla-header">২৪ ঘণ্টা জরুরি বিভাগ খোলা</p>
+</div>
+</div>
+<div class="space-y-4">
+<!-- Hospital Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 hover:bg-surface-container-low transition-all duration-300 group border border-transparent hover:border-primary-fixed">
+<h3 class="font-bold text-lg text-on-surface mb-2 bangla-header">ঢাকা মেডিকেল কলেজ হাসপাতাল</h3>
+<div class="flex items-start gap-2 text-on-surface-variant text-sm mb-6 bangla-header">
+<span class="material-symbols-outlined text-lg" data-icon="place">place</span>
+                                রামনা, ঢাকা ১০০০
+                            </div>
+<button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-white rounded-full font-bold flex items-center justify-center gap-2 group-hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined" data-icon="call" style="font-variation-settings: 'FILL' 1;">call</span>
+                                কল করুন
+                            </button>
+</div>
+<!-- Hospital Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 hover:bg-surface-container-low transition-all duration-300 group border border-transparent hover:border-primary-fixed">
+<h3 class="font-bold text-lg text-on-surface mb-2 bangla-header">স্কয়ার হাসপাতাল লিঃ</h3>
+<div class="flex items-start gap-2 text-on-surface-variant text-sm mb-6 bangla-header">
+<span class="material-symbols-outlined text-lg" data-icon="place">place</span>
+                                পান্থপথ, ঢাকা ১২০৫
+                            </div>
+<button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-white rounded-full font-bold flex items-center justify-center gap-2 group-hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined" data-icon="call" style="font-variation-settings: 'FILL' 1;">call</span>
+                                কল করুন
+                            </button>
+</div>
+</div>
+</section>
+<!-- Category: Ambulance -->
+<section class="space-y-6">
+<div class="flex items-center gap-3 px-2">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl" data-icon="ambulance" style="font-variation-settings: 'FILL' 1;">ambulance</span>
+</div>
+<div>
+<h2 class="text-xl font-bold bangla-header text-secondary">অ্যাম্বুলেন্স সার্ভিস</h2>
+<p class="text-sm text-outline bangla-header">তাত্ক্ষণিক প্রতিক্রিয়ার জন্য</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest rounded-xl p-6 hover:bg-surface-container-low transition-all duration-300 group border border-transparent hover:border-secondary-container">
+<h3 class="font-bold text-lg text-on-surface mb-2 bangla-header">আঞ্জুমান মফিদুল ইসলাম</h3>
+<div class="flex items-start gap-2 text-on-surface-variant text-sm mb-6 bangla-header">
+<span class="material-symbols-outlined text-lg" data-icon="place">place</span>
+                                কাকরাইল, ঢাকা
+                            </div>
+<button class="w-full py-3 bg-secondary text-white rounded-full font-bold flex items-center justify-center gap-2 group-hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined" data-icon="call" style="font-variation-settings: 'FILL' 1;">call</span>
+                                কল করুন
+                            </button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 hover:bg-surface-container-low transition-all duration-300 group border border-transparent hover:border-secondary-container">
+<h3 class="font-bold text-lg text-on-surface mb-2 bangla-header">আল-মারকাজুল ইসলামি</h3>
+<div class="flex items-start gap-2 text-on-surface-variant text-sm mb-6 bangla-header">
+<span class="material-symbols-outlined text-lg" data-icon="place">place</span>
+                                মোহাম্মদপুর, ঢাকা
+                            </div>
+<button class="w-full py-3 bg-secondary text-white rounded-full font-bold flex items-center justify-center gap-2 group-hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined" data-icon="call" style="font-variation-settings: 'FILL' 1;">call</span>
+                                কল করুন
+                            </button>
+</div>
+</div>
+</section>
+<!-- Category: Fire Service -->
+<section class="space-y-6">
+<div class="flex items-center gap-3 px-2">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-3xl" data-icon="fire_truck" style="font-variation-settings: 'FILL' 1;">fire_truck</span>
+</div>
+<div>
+<h2 class="text-xl font-bold bangla-header text-tertiary">ফায়ার সার্ভিস</h2>
+<p class="text-sm text-outline bangla-header">অগ্নিনির্বাপক ও উদ্ধার অভিযান</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-surface-container-lowest rounded-xl p-6 hover:bg-surface-container-low transition-all duration-300 group border border-transparent hover:border-tertiary-fixed">
+<h3 class="font-bold text-lg text-on-surface mb-2 bangla-header">ফায়ার সার্ভিস কন্ট্রোল রুম</h3>
+<div class="flex items-start gap-2 text-on-surface-variant text-sm mb-6 bangla-header">
+<span class="material-symbols-outlined text-lg" data-icon="place">place</span>
+                                সদর দপ্তর, ঢাকা
+                            </div>
+<button class="w-full py-3 bg-tertiary text-white rounded-full font-bold flex items-center justify-center gap-2 group-hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined" data-icon="call" style="font-variation-settings: 'FILL' 1;">call</span>
+                                কল করুন
+                            </button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 hover:bg-surface-container-low transition-all duration-300 group border border-transparent hover:border-tertiary-fixed">
+<h3 class="font-bold text-lg text-on-surface mb-2 bangla-header">কুর্মিটোলা ফায়ার স্টেশন</h3>
+<div class="flex items-start gap-2 text-on-surface-variant text-sm mb-6 bangla-header">
+<span class="material-symbols-outlined text-lg" data-icon="place">place</span>
+                                কুর্মিটোলা, ঢাকা
+                            </div>
+<button class="w-full py-3 bg-tertiary text-white rounded-full font-bold flex items-center justify-center gap-2 group-hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined" data-icon="call" style="font-variation-settings: 'FILL' 1;">call</span>
+                                কল করুন
+                            </button>
+</div>
+</div>
+</section>
+</div>
+<!-- Urgent Numbers Grid (Asymmetric Highlight) -->
+<div class="mt-16 bg-surface-container-low rounded-2xl p-8 grid grid-cols-1 md:grid-cols-4 gap-8 border border-outline-variant/10">
+<div class="col-span-1 md:col-span-2 flex flex-col justify-center">
+<h2 class="text-3xl font-black bangla-header text-teal-800 mb-2">জরুরি হেল্পলাইন নম্বর</h2>
+<p class="text-slate-600 bangla-header">যেকোনো সময় সাহায্যের জন্য এই নম্বরগুলোতে সরাসরি যোগাযোগ করতে পারেন।</p>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow">
+<span class="text-4xl font-black text-tertiary mb-2">৯৯৯</span>
+<span class="text-sm font-bold text-on-surface-variant bangla-header uppercase">জাতীয় জরুরি সেবা</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow">
+<span class="text-4xl font-black text-primary mb-2">১৬২৬৩</span>
+<span class="text-sm font-bold text-on-surface-variant bangla-header uppercase">স্বাস্থ্য বাতায়ন</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-950 w-full mt-auto pt-12 pb-8 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-4 gap-8 font-['Inter','Hind_Siliguri'] text-sm leading-[1.6]">
+<div class="flex flex-col gap-4">
+<span class="text-xl font-bold text-teal-800">DocTalk</span>
+<p class="text-slate-500 dark:text-slate-400">আপনার স্বাস্থ্যসেবার বিশ্বস্ত সঙ্গী। আমরা আপনার জরুরি মুহূর্তে সঠিক সেবার সন্ধান দিতে প্রতিশ্রুতিবদ্ধ।</p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-teal-800 dark:text-teal-300">দ্রুত লিংক</h4>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 underline transition-all opacity-80 hover:opacity-100" href="#">জরুরি যোগাযোগ</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 underline transition-all opacity-80 hover:opacity-100" href="#">মেডিক্যাল ডিসক্লেইমার</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-teal-800 dark:text-teal-300">আইনি তথ্য</h4>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 underline transition-all opacity-80 hover:opacity-100" href="#">প্রাইভেসি পলিসি</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-teal-600 underline transition-all opacity-80 hover:opacity-100" href="#">টার্মস অফ সার্ভিস</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-teal-800 dark:text-teal-300">অ্যাপটি নামিয়ে নিন</h4>
+<div class="flex gap-2">
+<div class="w-32 h-10 bg-slate-800 rounded-lg flex items-center justify-center p-2">
+<img alt="Play Store" class="h-full object-contain" data-alt="stylized vector icon of google play store logo on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIzXJ5Jb97jhMLn3cNh7RaYgLKVNCNY_Kzjfzx467n6RQx4RWQD7dYP1ndqlfEhYWtIW-0qKVBHexfIXLs8s8ZuyMuQh7ZIk3g3zFngQJpd5uRay3pgP76J336BHvIq__3t1GDhaK2rcWvfXOYhJGNeiZXK99SVh-JWDX4Me1CZ3_25jPyz2BbNFKtbbI0C91f_brYUmmOLykkDiNyGZRi1LkRbA1woeuuPvuqqVPwLVSz0moCmMe8kybuzvmV4igtT2WGIjSlfS4Y"/>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-slate-500">
+<p>© ২০২৪ DocTalk. সকল স্বত্ব সংরক্ষিত।</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-teal-600" data-icon="facebook">social_leaderboard</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-teal-600" data-icon="share">share</span>
+</div>
+</div>
+</footer>
+</body></html>
